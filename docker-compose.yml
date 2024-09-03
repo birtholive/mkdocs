@@ -1,0 +1,12 @@
+services:
+  documentation:
+    container_name: mkdocs
+    image: mkdocs-alpine
+    ports:
+      - "8005:8000"
+    # networks:
+    #   - bigdata
+    volumes:
+      - ./:/docs
+    stdin_open: true
+    tty: true 

@@ -1,0 +1,5 @@
+# Sobre a KORE Wireless
+
+Fundada em 2003, a KORE Wireless é uma consultora pioneira e líder na implementação de soluções de IoT e M2M. Em 2016, a KORE adquiriu no Brasil a TM Data, empresa que desde 2000 oferecia serviços de conectividade para IoT e M2M. Podemos ajudá-lo a eliminar a demorada necessidade de identificar, avaliar, contratar e gerenciar vários provedores de conectividade de rede, fabricantes de equipamentos e organizações de serviços profissionais à medida que você cria sua solução de IoT. Também oferecemos experiência de alcance global e orientação comprovadas que podem ajudá-lo a maximizar seus investimentos em IoT e transformar o desempenho dos negócios. 
+
+Na KORE Wireless, enxergamos nas soluções de IoT a próxima grande oportunidade para empresas de todos os segmentos melhorarem o desempenho, otimizarem suas operações e encantarem seus clientes. Estamos equipados para fornecer soluções de ponta para os principais mercados, tirando toda a complexidade de implementação e escalabilidade da IoT.
