@@ -14,93 +14,76 @@ sudo docker image ls
 ~~~
 !!! info
     Para verificar todos as imagens pode-se utilizar o complemento -a após o ls com um espaço separando-os.
-## Acessar um container
-```
-docker exec –it <container id> /bin/bash
-```
-ou somente usando o sh no final
-```
-docker exec –it <container id> /bin/sh
-```
-## Parar um container
-~~~
-docker stop <container id>
-~~~
-
-## Verificar informações sobre uma instalação
-~~~
-pip3 freeze | grep python
-~~~
 
 ## Criar uma imagem docker
 ~~~ python
 sudo docker build -t nome_da_imagem .
 ~~~
 
-## Login to Docker HUB
+## Logar no Docker HUB
 ```
 sudo docker login
 ```
 
-## Pull the image from Docker HUB
+## Baixar uma imagem do Docker HUB
 ```
-sudo docker pull wlcamargo/jupyter
-```
-
-## Run the container in interactive mode
-```
-sudo docker run -it --name jupyter wlcamargo/jupyter /bin/bash
+sudo docker pull alpine:edge
 ```
 
-## Access the container
+## Rodar um container no modo interativo
+```
+sudo docker run -it --name jupyter alpine:edge /bin/bash
+```
+
+## Acessar o container
 ```
 sudo docker exec -it jupyter /bin/bash
 ```
 
-## Run a specific container
+## Rodar um container específico
 ```
 sudo docker compose up -d jupyter
 ```
 
-## Stop a specific container
+## Parar um container específico
 ```
 sudo docker stop -d jupyter
 ```
 
-## Copy file from host to container
+## Copiar arquivos do host para o container
 ```
 docker cp file.jar jupyter:/opt/spark/jars/
 ```
 
-## Copy file from container to host
+## Copiar arquivos do container para o host
 ```
 docker cp jupyter:/opt/spark/jars/
 ```
 
-## Clone Docker Image
+## Clonar Imagem Docker
 
-### Tag the image
+### Adicionar uma tag na imagem
 ```
-docker tag wlcamargo/spark-master your-repository/image
+docker tag alpine:edge your-repository/image
 ```
 
-### Push the image
+### Enviar imagem para o Docker Hub
 ```
 docker push your-repository/image
 ```
 
-### Disable Firewall
+### Desabilitar o Firewall
 ```
 sudo ufw disable
 ```
 
-# Docker Swarm Mode
+# Modo Docker Swarm
 ## Init 
 ```
 docker swarm init --advertise-addr <ip do host>
 ```
 
-## Create Stack
+## Criar Stack
 ```
 docker stack deploy -c docker-compose-swarm.yml big_data
 ```

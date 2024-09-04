@@ -1,0 +1,14 @@
+image: python:3.12.3
+
+before_script:
+  - pip intall -r requirements.txt
+
+pages:
+  script:
+    - mkdocs build
+    - mv site public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master

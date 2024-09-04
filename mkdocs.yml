@@ -11,18 +11,16 @@ nav:
     - Docker: docker.md
     - SQL: mysql.md
     - MkDocs: mkdocs.md
+    - GIT: git.md
   - About: about.md
 
 theme:
   name: 'material'
   palette:
     scheme: 'slate'
-  fonte:
-    text: Ubuntu
-    code: Ubuntu Mono
   features:
     - content.code.copy
-    - navigation.tabs
+    # - navigation.tabs
     - toc.number
 
 markdown_extensions:
@@ -30,3 +28,4 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.highlight:
       linenums: true
+  

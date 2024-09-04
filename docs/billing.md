@@ -1,5 +1,5 @@
 # Rotinas de execução do billing
-
+O billing é o processo que calcula o total que cada cliente deverá pagar. Ele é calculado por contrato, considerando o plano, quantidade de linhas e consumo que o cliente possuia no periodo analisado para o contrato em questão.
 ## Billing LoRa
 Deve ser processado no primeiro dia de cada mês
 

@@ -5,6 +5,11 @@ Essa é uma rotina que deve ser executada manualmente quando as faturas não for
     http: //172.31.245.137:2804/1/iugu/cobranca/billing?id=ID_BILLING&bp=1
 
 ## Pedidos de migração de linhas
+### Acompanhar os chamdos no Zendesk
+
+### Informar as linhas na planilha
+
+### Rodar o processo
 
 ## Reports Power BI
 

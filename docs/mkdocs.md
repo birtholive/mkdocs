@@ -1,4 +1,8 @@
-# MkDocs
+# Comandos MkDocs
+## Instalar o MkDocs
+~~~
+pip install mkdocs
+~~~
 ## Iniciar o servidor MkDocs
     mkdocs serve
 ## Adicionar imagem ao projeto

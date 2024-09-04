@@ -4,7 +4,7 @@ FROM alpine:edge
 # Instale as dependências necessárias
 RUN apk add --no-cache python3 py3-pip
 
-# Crie e ative um ambiente virtual
+# Crie e ative um ambiente virtual a partir 
 RUN python3 -m venv /venv
 RUN /venv/bin/pip install --upgrade pip
 

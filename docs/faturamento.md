@@ -1,5 +1,5 @@
 # Faturamento
-
+O faturamento consiste na geração do arquivo JSON que é enviado para a E&Y para gerar as faturas de cobrança dos clientes
 ## JSON Faturamento Conectividade (final do mês)
 - Informar todos os contratos de exceções e o período a ser calculado, no arquivo .CSV ("D:\ETLs\SAT_BIS\Excecoes\Excecoes.csv")
 - Abrir o Pentaho e executar o arquivo .ktr ("D:\ETLs\SAT_BIS\Excecoes\excecoes.ktr")
