@@ -4,12 +4,17 @@
 ```
 ip a | grep eth0
 ```
+
 O comando ip a | grep eth0 é usado para exibir informações sobre a interface de rede eth0 no seu sistema. 
 
 * `ip` a: Este comando exibe todas as interfaces de rede e suas respectivas informações, como endereços IP, estado da interface, etc.
 * `|`: Este é o operador pipe, que redireciona a saída do comando anterior (ip a) como entrada para o próximo comando (grep).
 * `grep eth0`: Este comando filtra a saída para mostrar apenas as linhas que contêm a palavra “eth0”, que é o nome da interface de rede.
 
+Você também pode usar o seguinte comando:
+```
+ip addr show eth0
+```
 ## Permissões
 ### Tipos de permissões
 * Leitura ®: Permite visualizar o conteúdo de um arquivo ou listar o conteúdo de um diretório.
@@ -84,14 +89,31 @@ sudo chown -R $USER:$USER /caminho/do/diretorio
 mkdir nome_do_diretorio
 ~~~
 
-## Renomear diretório
+## Renomear diretórios e arquivos
+### Renomear um diretório
 ~~~
-mv nome_antigo nome_novo
+mv diretorio_antigo diretorio_novo
 ~~~
-## Mover diretório
-Se você tem um diretório chamado meu_diretorio e quer movê-lo para um diretório chamado novo_local, você usaria:
+### Renomear um arquivo
+~~~
+mv arquivo_antigo.txt arquivo_novo.txt
+~~~
+## Mover diretórios e arquivos
+### Mover diretório
 ~~~
 mv meu_diretorio novo_local/
+~~~
+### Mover um arquivo para um diretório específico
+~~~
+mv arquivo.txt /caminho/do/destino/
+~~~
+### Mover vários arquivos para um diretório
+~~~
+mv arquivo1.txt arquivo2.txt /caminho/do/destino/
+~~~
+### Usar curingas para mover arquivos com padrões específicos
+~~~bash
+mv *.txt /caminho/do/destino/
 ~~~
 
 ## Excluir diretórios

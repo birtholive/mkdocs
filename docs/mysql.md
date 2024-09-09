@@ -70,3 +70,93 @@ FROM employees
 GROUP BY department
 HAVING SUM(salary) > 50000;
 ~~~
+
+## Exemplos de consulta
+### Acumular valores de uma coluna no MySQL 5.x
+```sql
+SELECT
+	t.periodo
+	, t.cnpj
+	, t.nome_fantasia
+	, t.linhas_net
+	, @acumulado := IF(@prev_cnpj = t.cnpj , @acumulado + t.linhas_net , t.linhas_net) AS linhas_acumulado
+	, @prev_cnpj := t.cnpj --> este parametro é necessário para que o acumulado seja calculado corretamente
+FROM
+	(
+	SELECT
+		b.periodo
+		, se.empresa_cnpj AS cnpj
+		, se.empresa_nome_fantasia AS nome_fantasia
+		, COALESCE(SUM(b.qtde_linhas_adicionadas) - SUM(b.qtde_linhas_canceladas), 0) AS linhas_net
+	FROM
+		billing b
+	JOIN sat_empresas se ON
+		se.empresa_id = b.empresa_id
+	WHERE
+		se.empresa_nome_fantasia IN('granito', 'defender')
+	GROUP BY
+		se.empresa_cnpj
+		, b.periodo
+	ORDER BY
+		se.empresa_cnpj
+		, b.periodo) t
+	,
+    (
+	SELECT
+		@acumulado := 0
+		, @prev_cnpj := '') AS vars;
+```
+### Acumular valores de uma coluna no MySQL 8+
+#### Método 1: Sem WITH
+~~~sql
+SELECT
+    b.periodo,
+    se.empresa_cnpj AS cnpj,
+    se.empresa_nome_fantasia AS nome_fantasia,
+    COALESCE(SUM(b.qtde_linhas_adicionadas) - SUM(b.qtde_linhas_canceladas), 0) AS linhas_net,
+    SUM(COALESCE(SUM(b.qtde_linhas_adicionadas) - SUM(b.qtde_linhas_canceladas), 0)) OVER (PARTITION BY se.empresa_cnpj ORDER BY b.periodo) AS linhas_net_acumuladas
+FROM
+    billing b
+JOIN sat_empresas se ON se.empresa_id = b.empresa_id
+GROUP BY
+    se.empresa_cnpj, b.periodo, se.empresa_nome_fantasia
+ORDER BY
+    se.empresa_cnpj, b.periodo;
+~~~
+
+#### Método 2: Com WITH
+~~~sql
+WITH linhas_net_calculadas AS (
+    SELECT
+        b.periodo,
+        se.empresa_cnpj AS cnpj,
+        se.empresa_nome_fantasia AS nome_fantasia,
+        COALESCE(SUM(b.qtde_linhas_adicionadas) - SUM(b.qtde_linhas_canceladas), 0) AS linhas_net
+    FROM
+        billing b
+    JOIN sat_empresas se ON se.empresa_id = b.empresa_id
+    GROUP BY
+        se.empresa_cnpj, b.periodo, se.empresa_nome_fantasia
+),
+linhas_net_acumuladas AS (
+    SELECT
+        periodo,
+        cnpj,
+        nome_fantasia,
+        linhas_net,
+        SUM(linhas_net) OVER (PARTITION BY cnpj ORDER BY periodo) AS linhas_net_acumuladas
+    FROM
+        linhas_net_calculadas
+)
+SELECT
+    periodo,
+    cnpj,
+    nome_fantasia,
+    linhas_net,
+    linhas_net_acumuladas
+FROM
+    linhas_net_acumuladas
+ORDER BY
+    cnpj, periodo;
+
+~~~

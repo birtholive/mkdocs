@@ -77,13 +77,59 @@ docker push your-repository/image
 sudo ufw disable
 ```
 
-# Modo Docker Swarm
-## Init 
+## Modo Docker Swarm
+### Init 
 ```
 docker swarm init --advertise-addr <ip do host>
 ```
 
-## Criar Stack
+### Criar Stack
 ```
 docker stack deploy -c docker-compose-swarm.yml big_data
 ```
+
+## Liberar acesso ao container no wsl para computadores remotos
+Para acessar o container Docker rodando no Ubuntu dentro do WSL a partir de outra máquina Windows remota, você pode seguir os seguintes passos:
+
+### Obter o endereço IP do WSL
+No terminal do Ubuntu dentro do WSL, execute o comando:
+```
+ip addr show eth0
+```
+
+Anote o endereço IP exibido.
+### Configurar o firewall do Windows
+#### Abrir o “Windows Defender Firewall com Segurança Avançada”
+* Pressione `Win + R` para abrir a janela “Executar”.
+* Digite `wf.msc` e pressione Enter. Isso abrirá o “Windows Defender Firewall com Segurança Avançada”.
+#### Criar uma nova regra de entrada
+* No painel esquerdo, clique em “Regras de Entrada”.
+* No painel direito, clique em “Nova Regra…”.
+#### Selecionar o tipo de regra
+* Na janela “Assistente para Nova Regra de Entrada”, selecione “Porta” e clique em “Avançar”.
+#### Especificar as portas e protocolos
+* Selecione “TCP”.
+* Em “Portas locais específicas”, digite o numero da porta.
+* Clique em “Avançar”.
+#### Permitir a conexão
+* Selecione “Permitir a conexão” e clique em “Avançar”.
+#### Especificar o perfil
+* Marque as opções “Domínio”, “Particular” e “Público” para garantir que a regra se aplique a todos os tipos de rede.
+* Clique em “Avançar”.
+#### Nomear a regra
+* Dê um nome à regra, como “Permitir Porta NumeroPorta”.
+* Clique em “Concluir”.
+### Redirecionar a porta do WSL para o Windows
+No terminal do Windows, execute o comando:
+```
+netsh interface portproxy add v4tov4 listenport=8005 listenaddress=0.0.0.0 connectport=8005 connectaddress=<IP_do_WSL>
+```
+
+Substitua <IP_do_WSL> pelo endereço IP obtido no passo 1.
+### Acessar o container Docker da máquina remota
+Na máquina Windows remota, abra um navegador ou use um cliente HTTP para acessar:
+```
+http://<IP_do_Windows>:8005
+```
+
+Substitua <IP_do_Windows> pelo endereço IP da máquina Windows onde o WSL está rodando.
