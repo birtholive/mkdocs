@@ -42,6 +42,11 @@ WHERE condition
 ALTER TABLE <tabela> 
 ADD index (<coluna>)
 ```
+!!! info
+    Para versões do MySQL inferiores a v8, pode-se utilizar o seguinte:
+    ~~~sql
+    CREATE INDEX nome_do_indice ON nome_da_tabela (nome_da_coluna)
+    ~~~
 
 ## Index Composto
 ```sql

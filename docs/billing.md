@@ -29,3 +29,15 @@ O processo de ETL roda automaticamente na madrugada do dia 24 de cada mês
     1. É importante que o billing rode na madrugada para que nenhum pedido seja finalizado no dia 24 antes da execução do processo e entre no calculo de billing. 
     2. Verifique se as faturas foram todas geradas corretamente (um email deve chegar com essa informação)
 
+## Regras billing LoRa
+### Cobrança Ativações
+~~~js
+cobranca_ativacoes = variacao_mensal_dispositivos * anuidade_mes_prorata;
+anuidade_mes_prorata = prorata_mensalidade * meses_restantes_anuidade;
+prorata_mensalidade = valor_anuidade / 12;
+~~~
+
+### Cobrança Total
+~~~js
+cobranca_total = cobranca_ativacoes + cobranca_excedente + cobranca_plataforma + lancamentos_cobranca - lancamentos_desconto;
+~~~

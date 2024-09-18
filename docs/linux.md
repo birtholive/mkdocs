@@ -199,7 +199,12 @@ python3 -m venv ./nome_do_amabiente
    ```
 
 ## Verificar HASH
+### Linux
+~~~bash
+sha256sum "nome_do_arquivo"
 ~~~
+### Windows
+~~~bash
 certutil -hashfile "Caminho do arquivo" SHA256
 ~~~
 

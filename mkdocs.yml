@@ -12,6 +12,7 @@ nav:
     - SQL: mysql.md
     - MkDocs: mkdocs.md
     - GIT: git.md
+    - JavaScript: javascript.md
   - About: about.md
 
 theme:

@@ -9,7 +9,7 @@ RUN python3 -m venv /venv
 RUN /venv/bin/pip install --upgrade pip
 
 # Instale o MkDocs no ambiente virtual
-RUN /venv/bin/pip install mkdocs mkdocs-material mkdocs-awesome-pages-plugin
+RUN /venv/bin/pip install --no-cache mkdocs mkdocs-material
 
 # Defina o diretório de trabalho
 WORKDIR /docs
