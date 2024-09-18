@@ -25,12 +25,6 @@ sudo docker build -t nome_da_imagem .
 sudo docker login
 ```
 
-## Subir uma imagem para o Docker Hub
-```
-docker push nome-do-usuario/nome-da-imagem
-
-```
-
 ## Baixar uma imagem do Docker HUB
 ```
 sudo docker pull alpine:edge
