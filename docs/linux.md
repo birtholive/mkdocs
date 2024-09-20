@@ -134,6 +134,42 @@ echo "hello world" > hello.txt
 * `>`: Este operador redireciona a saída do comando echo para um arquivo.
 * `hello.txt`: Este é o nome do arquivo onde a frase será escrita. Se o arquivo não existir, ele será criado; se já existir, seu conteúdo será substituído pela nova frase.
 
+## Criar vários arquivos de uma única vez
+~~~bash
+touch arquivo{1..5}.txt
+~~~
+Você também pode adicionar um conteúdo ao arquivo usando o `for`. No comando `echo`, a opção `-e` habilita a interpretação de caracteres de escape. Isso permite que você use sequências como `\n` para nova linha, `\t` para tabulação, entre outras.
+~~~bash
+for i in {1..5}; do
+  echo -e "Linha 1 do arquivo $i\nLinha 2 do arquivo $i" > arquivo$i.txt
+done
+~~~
+## Redirecionar saída de um comando para um arquivo com o comando `tee`
+O comando `tee` no Linux é bastante útil para redirecionar a saída de um comando para um arquivo e, ao mesmo tempo, exibir essa saída no terminal. A sintaxe básica do comando é:
+~~~
+comando | tee [OPÇÕES] [ARQUIVO]
+~~~
+Aqui estão alguns exemplos de como usar o `tee`
+
+### Salvar a saída de um comando em um arquivo e exibi-la no terminal
+~~~
+ls -l | tee lista_de_arquivos.txt
+~~~
+Isso listará os arquivos no diretório atual, salvará a lista no arquivo lista_de_arquivos.txt e também exibirá a lista no terminal.
+
+### Adicionar a saída de um comando a um arquivo existente
+~~~
+echo "Nova linha de texto" | tee -a arquivo_existente.txt
+~~~
+Isso adicionará “Nova linha de texto” ao final do arquivo arquivo_existente.txt e também exibirá a linha no terminal.
+
+### Usar tee com múltiplos arquivos
+~~~
+df -h | tee arquivo1.txt arquivo2.txt
+~~~
+Isso salvará a saída do comando df -h em ambos os arquivos arquivo1.txt e arquivo2.txt, além de exibir a saída no terminal.
+O comando tee é frequentemente usado em scripts e pipelines para monitorar a saída de comandos enquanto a grava em arquivos para referência futura
+
 ## Abrir arquivo
 `cat`: Imprimir o conteúdo de um arquivo
 
@@ -161,7 +197,7 @@ find /home/usuario/imagens -type f -name "*.jpg" -exec cp {} /home/usuario/backu
 ~~~
 ## Deletar arquivos
 ~~~
-del c:\simpsons\bart.doc - apaga o arquivo bart.doc presente na pasta simpsons;
+rm c:\simpsons\bart.doc - apaga o arquivo bart.doc presente na pasta simpsons;
 ~~~
 ## Criar chave SSH
 ```
@@ -199,7 +235,12 @@ python3 -m venv ./nome_do_amabiente
    ```
 
 ## Verificar HASH
+### Linux
 ~~~
-certutil -hashfile "Caminho do arquivo" SHA256
+sha256sum "caminho/do/arquivo"
 ~~~
 
+### Windows
+~~~
+certutil -hashfile "caminho\do\arquivo" SHA256
+~~~
