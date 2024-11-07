@@ -3,10 +3,14 @@ services:
     container_name: mkdocs
     image: mkdocs-alpine
     ports:
-      - "8005:8000"
-    # networks:
-    #   - bigdata
+      - "8001:8000"
+    networks:
+      - rede
     volumes:
       - ./:/docs
     stdin_open: true
     tty: true 
+networks:
+  rede:
+    name: rede_master
+    driver: bridge

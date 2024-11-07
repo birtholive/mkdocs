@@ -75,7 +75,7 @@ sudo chown -R $USER:$USER /caminho/do/diretorio
 ## Listar arquivos em um diretório
  `ls`: Listar arquivos e diretórios no diretório atual
 
-## Chegar o diretório atual
+## Checar o caminho do diretório atual
 `pwd`: Imprime o diretório de trabalho atual
 
 ## Navegar pelos diretórios
@@ -204,6 +204,34 @@ rm c:\simpsons\bart.doc - apaga o arquivo bart.doc presente na pasta simpsons;
 ssh-keygen -t rsa -b 4096 -C "seu_email@example.com"
 ```
 ## Listar pacotes
+Use o comando apt list  para mostrar todos os pacotes disponíveis do Ubuntu:
+~~~
+sudo apt list
+~~~
+Para listar apenas os pacotes instalados, execute o comando apt list com a opção –installed :
+~~~
+sudo apt list –-installed
+~~~
+Adicione o argumento less para mostrar uma saída menor. Para fazer isso, adicione um pipe (|) e less no final do seu comando:
+~~~
+sudo apt list –-installed | less
+~~~
+Enquanto less comprime o resultado, o comando ainda listará todos os pacotes instalados. Para verificar se um pacote está instalado, use o comando grep com o nome do software:
+~~~
+sudo apt list --installed | grep nomedopacote
+~~~
+Para visualizar mais informações sobre um pacote específico instalado em seu sistema, use o comando apt show:
+~~~
+sudo apt show nomedopacote
+~~~
+Lembre-se de substituir nomedopacote  pelo nome específico do pacote que você deseja pesquisar. Por exemplo, execute estes comandos para listar pacotes relacionados ao Vim:
+~~~
+sudo apt list --installed | grep vim
+~~~
+Para exibir informações detalhadas sobre um determinado pacote Vim, execute o seguinte:
+~~~
+sudo apt show vim
+~~~
 O comando a seguir é usado para listar todos os pacotes Python instalados no seu ambiente que contêm a palavra “python” no nome.
 ~~~
 pip3 freeze | grep python
@@ -212,6 +240,19 @@ pip3 freeze | grep python
 * `pip3 freeze`: Este comando lista todos os pacotes instalados no seu ambiente Python, juntamente com suas versões.
 * `|`: Este é o operador pipe, que redireciona a saída do comando anterior (pip3 freeze) como entrada para o próximo comando (grep).
 * `grep python`: Este comando filtra a lista de pacotes para mostrar apenas aqueles que contêm a palavra “python” no nome.
+## Desinstalar pacotes
+Para desinstalar pacotes no Linux, você pode usar o comando apt com a opção remove. Por exemplo, para desinstalar o pacote python3, você pode usar o seguinte comando:
+~~~
+sudo apt remove nome_do_pacote
+~~~
+Se você deseja remover também as dependências do pacote, você pode usar a opção purge em vez de remove:
+~~~
+sudo apt purge nome_do_pacote
+~~~
+Se você deseja remover todos os pacotes que foram instalados automaticamente como dependências, você pode usar a opção autoremove:
+~~~
+sudo apt autoremove
+~~~
 
 ## Ambiente virtual do Python
 ### Criar um ambiente virtual
@@ -244,3 +285,21 @@ sha256sum "caminho/do/arquivo"
 ~~~
 certutil -hashfile "caminho\do\arquivo" SHA256
 ~~~
+## Desligar o sistema pelo terminal
+O comando para desligar o Linux pelo terminal é:
+~~~
+sudo shutdown -h now
+~~~
+ou
+~~~
+sudo poweroff
+~~~
+Esses comandos desligam o sistema imediatamente. Se você quiser agendar o desligamento para um horário específico, você pode usar:
+~~~
+sudo shutdown -h [horário]
+~~~
+Por exemplo:
+~~~
+sudo shutdown -h 14:00
+~~~
+Isso desligará o sistema às 14:00 horas.

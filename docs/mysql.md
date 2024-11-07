@@ -160,3 +160,34 @@ ORDER BY
     cnpj, periodo;
 
 ~~~
+
+## Converter decimal para formato de ip
+Para converter um número decimal em um formato de IP (IPv4), você precisa seguir alguns passos simples. Um endereço IP é composto por quatro octetos, cada um representando um número entre 0 e 255. Aqui está como você pode fazer isso:
+
+Divida o número decimal: O número decimal deve ser dividido em quatro partes, cada uma representando um octeto. Para isso, você pode usar a divisão sucessiva por 256.
+
+Calcule os octetos:
+
+1. O primeiro octeto é obtido dividindo o número por (256^3) (ou 16777216).
+2. O segundo octeto é obtido dividindo o restante por (256^2) (ou 65536).
+3. O terceiro octeto é obtido dividindo o restante por (256^1) (ou 256).
+4. O quarto octeto é o restante final.
+
+Exemplo: Vamos converter o número decimal 3232235776.
+
+* Primeiro octeto: (3232235776 \div 16777216 = 192)
+* Segundo octeto: ((3232235776 \mod 16777216) \div 65536 = 168)
+* Terceiro octeto: ((3232235776 \mod 65536) \div 256 = 1)
+* Quarto octeto: (3232235776 \mod 256 = 0)
+
+Portanto, 3232235776 em formato de IP é 192.168.1.0.
+
+
+Para fazer o mesmo no SQL pode-se utilizar a função `inet_ntoa()` como mostrado abaixo:
+~~~sql
+SELECT
+	sl.linhas_gsm AS GSM
+	,inet_ntoa(linhas_endereco_ip) AS IP
+FROM
+	sat_linhas sl
+~~~
