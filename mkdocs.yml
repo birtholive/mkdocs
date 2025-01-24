@@ -1,11 +1,7 @@
-site_name: Documentação KORE BRASIL
+site_name: Tutoriais & Ferramentas
 
 nav:
   - Início: index.md
-  - Rotinas:
-    - Billing: billing.md 
-    - Faturamento: faturamento.md
-    - Outras Rotinas: rotinas.md
   - Tutoriais:
     - Linux: linux.md
     - Docker: docker.md
@@ -15,7 +11,6 @@ nav:
     - JavaScript: javascript.md
     - ADB: adb.md
   - Ferramentas: tools.md
-  - About: about.md
 
 theme:
   name: 'material'

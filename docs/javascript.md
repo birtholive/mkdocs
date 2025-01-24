@@ -39,7 +39,6 @@ function aplicarMascara(valor) {
 ### Exemplo 1
 ~~~js
 function removerAcentos(texto) {
-    // Mapeia os caracteres acentuados para suas versões sem acento
     const mapearAcentos = {
         'á': 'a', 'à': 'a', 'ã': 'a', 'â': 'a', 'ä': 'a',
         'é': 'e', 'è': 'e', 'ê': 'e', 'ë': 'e',
@@ -48,9 +47,9 @@ function removerAcentos(texto) {
         'ú': 'u', 'ù': 'u', 'û': 'u', 'ü': 'u',
         'ç': 'c', 'ñ': 'n'
     };
-
-    // Usa a função replace com uma expressão regular para substituir os caracteres
-    return texto.replace(/[áàãâäéèêëíìîïóòõôöúùûüçñ]/g, match => mapearAcentos[match]);
+    return texto.replace(/[áàãâäéèêëíìîïóòõôöúùûüçñ]/g, function(match) {
+        return mapearAcentos[match];
+    });
 }
 
 // Exemplo de uso
