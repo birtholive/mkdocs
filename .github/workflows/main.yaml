@@ -1,4 +1,4 @@
-name: Continuos Improvment
+name: Continuous Improvement
 
 on:
   push:
@@ -11,7 +11,12 @@ jobs:
 
     steps:
     - name: Checar o código
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
+
+    - name: Atualizar o Git
+      run: |
+        sudo apt-get update
+        sudo apt-get install git
 
     - name: Instalar o Python
       uses: actions/setup-python@v2
@@ -27,7 +32,7 @@ jobs:
       run: mkdocs build
 
     - name: Deploy no GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v4
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         publish_dir: ./site
