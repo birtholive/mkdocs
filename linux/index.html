@@ -1,0 +1,1841 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../docker/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>Linux - Tutoriais & Ferramentas</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linux" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Tutoriais &amp; Ferramentas" class="md-header__button md-logo" aria-label="Tutoriais & Ferramentas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tutoriais & Ferramentas
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Linux
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Tutoriais &amp; Ferramentas" class="md-nav__button md-logo" aria-label="Tutoriais & Ferramentas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Tutoriais & Ferramentas
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Início
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutoriais
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tutoriais
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Linux
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Linux
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#verificar-o-ip-da-maquina" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificar o IP da máquina
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissões
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Permissões">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-permissoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de permissões
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#categorias-de-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Categorias de usuários
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#representacao-das-permissoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Representação das permissões
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandos-uteis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos úteis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adiciona-permissao-de-execucao-para-o-proprietario-do-arquivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adiciona permissão de execução para o proprietário do arquivo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remover-a-permissao-de-escrita-para-o-grupo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remover a permissão de escrita para o grupo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#garantir-acesso-completo-a-um-diretorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Garantir acesso completo a um diretório
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alterar-o-proprietario-do-diretorio-para-o-seu-usuario-atual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alterar o proprietário do diretório para o seu usuário atual
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listar-arquivos-em-um-diretorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listar arquivos em um diretório
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checar-o-caminho-do-diretorio-atual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checar o caminho do diretório atual
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navegar-pelos-diretorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navegar pelos diretórios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criar-um-diretorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criar um diretório
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#renomear-diretorios-e-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renomear diretórios e arquivos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Renomear diretórios e arquivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#renomear-um-diretorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renomear um diretório
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renomear-um-arquivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renomear um arquivo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mover-diretorios-e-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mover diretórios e arquivos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mover diretórios e arquivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mover-diretorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mover diretório
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mover-um-arquivo-para-um-diretorio-especifico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mover um arquivo para um diretório específico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mover-varios-arquivos-para-um-diretorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mover vários arquivos para um diretório
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usar-curingas-para-mover-arquivos-com-padroes-especificos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usar curingas para mover arquivos com padrões específicos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#excluir-diretorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Excluir diretórios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Excluir diretórios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diretorios-vazios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diretórios vazios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diretorios-nao-vazios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diretórios não vazios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criar-um-arquivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criar um arquivo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criar-varios-arquivos-de-uma-unica-vez" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criar vários arquivos de uma única vez
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redirecionar-saida-de-um-comando-para-um-arquivo-com-o-comando-tee" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redirecionar saída de um comando para um arquivo com o comando tee
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Redirecionar saída de um comando para um arquivo com o comando tee">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#salvar-a-saida-de-um-comando-em-um-arquivo-e-exibi-la-no-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Salvar a saída de um comando em um arquivo e exibi-la no terminal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adicionar-a-saida-de-um-comando-a-um-arquivo-existente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adicionar a saída de um comando a um arquivo existente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usar-tee-com-multiplos-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usar tee com múltiplos arquivos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abrir-arquivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abrir arquivo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editar-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Editar arquivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copiar-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Copiar arquivos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Copiar arquivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copiar-um-arquivo-de-uma-pasta-par-outra" class="md-nav__link">
+    <span class="md-ellipsis">
+      Copiar um arquivo de uma pasta par outra
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encontrar-e-copiar-varios-arquivos-de-um-diretorio-e-subdiretorios-para-um-diretorio-especifico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encontrar e copiar vários arquivos de um diretório e subdiretórios para um diretório específico
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deletar-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deletar arquivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criar-chave-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criar chave SSH
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listar-pacotes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listar pacotes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desinstalar-pacotes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desinstalar pacotes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ambiente-virtual-do-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ambiente virtual do Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ambiente virtual do Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criar-um-ambiente-virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criar um ambiente virtual
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ativar-o-ambiente-virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ativar o ambiente virtual
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ativar o ambiente virtual">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linuxmacos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux/MacOS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verificar-hash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificar HASH
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verificar HASH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desligar-o-sistema-pelo-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desligar o sistema pelo terminal
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mysql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MkDocs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GIT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../javascript/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JavaScript
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ADB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ferramentas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#verificar-o-ip-da-maquina" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificar o IP da máquina
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissões
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Permissões">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-permissoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de permissões
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#categorias-de-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Categorias de usuários
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#representacao-das-permissoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Representação das permissões
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandos-uteis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos úteis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adiciona-permissao-de-execucao-para-o-proprietario-do-arquivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adiciona permissão de execução para o proprietário do arquivo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remover-a-permissao-de-escrita-para-o-grupo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remover a permissão de escrita para o grupo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#garantir-acesso-completo-a-um-diretorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Garantir acesso completo a um diretório
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alterar-o-proprietario-do-diretorio-para-o-seu-usuario-atual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alterar o proprietário do diretório para o seu usuário atual
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listar-arquivos-em-um-diretorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listar arquivos em um diretório
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checar-o-caminho-do-diretorio-atual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checar o caminho do diretório atual
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navegar-pelos-diretorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navegar pelos diretórios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criar-um-diretorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criar um diretório
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#renomear-diretorios-e-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renomear diretórios e arquivos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Renomear diretórios e arquivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#renomear-um-diretorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renomear um diretório
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renomear-um-arquivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renomear um arquivo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mover-diretorios-e-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mover diretórios e arquivos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mover diretórios e arquivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mover-diretorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mover diretório
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mover-um-arquivo-para-um-diretorio-especifico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mover um arquivo para um diretório específico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mover-varios-arquivos-para-um-diretorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mover vários arquivos para um diretório
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usar-curingas-para-mover-arquivos-com-padroes-especificos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usar curingas para mover arquivos com padrões específicos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#excluir-diretorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Excluir diretórios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Excluir diretórios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diretorios-vazios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diretórios vazios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diretorios-nao-vazios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diretórios não vazios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criar-um-arquivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criar um arquivo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criar-varios-arquivos-de-uma-unica-vez" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criar vários arquivos de uma única vez
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redirecionar-saida-de-um-comando-para-um-arquivo-com-o-comando-tee" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redirecionar saída de um comando para um arquivo com o comando tee
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Redirecionar saída de um comando para um arquivo com o comando tee">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#salvar-a-saida-de-um-comando-em-um-arquivo-e-exibi-la-no-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Salvar a saída de um comando em um arquivo e exibi-la no terminal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adicionar-a-saida-de-um-comando-a-um-arquivo-existente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adicionar a saída de um comando a um arquivo existente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usar-tee-com-multiplos-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usar tee com múltiplos arquivos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abrir-arquivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abrir arquivo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editar-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Editar arquivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copiar-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Copiar arquivos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Copiar arquivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copiar-um-arquivo-de-uma-pasta-par-outra" class="md-nav__link">
+    <span class="md-ellipsis">
+      Copiar um arquivo de uma pasta par outra
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encontrar-e-copiar-varios-arquivos-de-um-diretorio-e-subdiretorios-para-um-diretorio-especifico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encontrar e copiar vários arquivos de um diretório e subdiretórios para um diretório específico
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deletar-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deletar arquivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criar-chave-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criar chave SSH
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listar-pacotes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listar pacotes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desinstalar-pacotes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desinstalar pacotes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ambiente-virtual-do-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ambiente virtual do Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ambiente virtual do Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criar-um-ambiente-virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criar um ambiente virtual
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ativar-o-ambiente-virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ativar o ambiente virtual
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ativar o ambiente virtual">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linuxmacos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux/MacOS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verificar-hash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificar HASH
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verificar HASH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desligar-o-sistema-pelo-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desligar o sistema pelo terminal
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="linux">Linux</h1>
+<h2 id="verificar-o-ip-da-maquina">Verificar o IP da máquina</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ip a | grep eth0
+</code></pre></div></td></tr></table></div>
+<p>O comando ip a | grep eth0 é usado para exibir informações sobre a interface de rede eth0 no seu sistema. </p>
+<ul>
+<li><code>ip</code> a: Este comando exibe todas as interfaces de rede e suas respectivas informações, como endereços IP, estado da interface, etc.</li>
+<li><code>|</code>: Este é o operador pipe, que redireciona a saída do comando anterior (ip a) como entrada para o próximo comando (grep).</li>
+<li><code>grep eth0</code>: Este comando filtra a saída para mostrar apenas as linhas que contêm a palavra “eth0”, que é o nome da interface de rede.</li>
+</ul>
+<p>Você também pode usar o seguinte comando:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ip addr show eth0
+</code></pre></div></td></tr></table></div></p>
+<h2 id="permissoes">Permissões</h2>
+<h3 id="tipos-de-permissoes">Tipos de permissões</h3>
+<ul>
+<li>Leitura ®: Permite visualizar o conteúdo de um arquivo ou listar o conteúdo de um diretório.</li>
+<li>Escrita (w): Permite modificar o conteúdo de um arquivo ou adicionar/remover arquivos em um diretório.</li>
+<li>Execução (x): Permite executar um arquivo (se for um programa ou script) ou acessar um diretório.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Dica</p>
+<ul>
+<li>0: Nenhuma permissão (---)</li>
+<li>1: Permissão de execução (--x)</li>
+<li>2: Permissão de gravação (-w-)</li>
+<li>3: Permissão de gravação e execução (-wx)</li>
+<li>4: Permissão de leitura (r--)</li>
+<li>5: Permissão de leitura e execução (r-x)</li>
+<li>6: Permissão de leitura e gravação (rw-)</li>
+<li>7: Permissão total (leitura, gravação e execução) (rwx)</li>
+</ul>
+</div>
+<h3 id="categorias-de-usuarios">Categorias de usuários</h3>
+<ul>
+<li>Usuário (u): O proprietário do arquivo ou diretório.</li>
+<li>Grupo (g): Os usuários que pertencem ao mesmo grupo que o proprietário.</li>
+<li>Outros (o): Todos os outros usuários.</li>
+</ul>
+<h3 id="representacao-das-permissoes">Representação das permissões</h3>
+<p>As permissões são representadas por uma combinação de letras (r, w, x) ou por um valor numérico (octal). Por exemplo:</p>
+<p>rwxr-xr-- significa que o proprietário tem todas as permissões, o grupo tem permissões de leitura e execução, e outros usuários têm apenas permissão de leitura.
+755 no modo octal é equivalente a rwxr-xr-x.</p>
+<h3 id="comandos-uteis">Comandos úteis</h3>
+<p>Visualizar Permissões: <code>ls -l</code> exibe uma lista detalhada dos arquivos e diretórios, incluindo suas permissões.
+Alterar Permissões: chmod é usado para alterar as permissões. Por exemplo, <code>chmod 755</code> arquivo define as permissões para rwxr-xr-x.</p>
+<h3 id="exemplos">Exemplos</h3>
+<h4 id="adiciona-permissao-de-execucao-para-o-proprietario-do-arquivo">Adiciona permissão de execução para o proprietário do arquivo</h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>chmod u+x script.sh
+</code></pre></div></td></tr></table></div>
+<h4 id="remover-a-permissao-de-escrita-para-o-grupo">Remover a permissão de escrita para o grupo</h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>chmod g-w arquivo.txt
+</code></pre></div></td></tr></table></div>
+<h4 id="garantir-acesso-completo-a-um-diretorio">Garantir acesso completo a um diretório</h4>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo chmod 777 diretorio/
+</code></pre></div></td></tr></table></div>
+O comando sudo chmod 777 diretorio/ é usado para alterar as permissões de um diretório no sistema. </p>
+<ul>
+<li><code>sudo</code>: Este comando é usado para executar o comando com privilégios de superusuário (root).</li>
+<li><code>chmod</code>: Este comando altera as permissões de arquivos ou diretórios.</li>
+<li><code>777</code>: Este é o conjunto de permissões que você está aplicando. </li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Dica</p>
+<ul>
+<li>7 (rwx): Permissões de leitura ®, escrita (w) e execução (x) para o proprietário</li>
+<li>7 (rwx): Permissões de leitura ®, escrita (w) e execução (x) para o grupo</li>
+<li>7 (rwx): Permissões de leitura ®, escrita (w) e execução (x) para outros usuários</li>
+</ul>
+</div>
+<h4 id="alterar-o-proprietario-do-diretorio-para-o-seu-usuario-atual">Alterar o proprietário do diretório para o seu usuário atual</h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo chown -R $USER:$USER /caminho/do/diretorio
+</code></pre></div></td></tr></table></div>
+<h2 id="listar-arquivos-em-um-diretorio">Listar arquivos em um diretório</h2>
+<p><code>ls</code>: Listar arquivos e diretórios no diretório atual</p>
+<h2 id="checar-o-caminho-do-diretorio-atual">Checar o caminho do diretório atual</h2>
+<p><code>pwd</code>: Imprime o diretório de trabalho atual</p>
+<h2 id="navegar-pelos-diretorios">Navegar pelos diretórios</h2>
+<ul>
+<li><code>cd /</code>: Muda para o diretório raiz.</li>
+<li><code>cd ~</code>: Muda para o diretório home do usuário.</li>
+<li><code>cd /caminho/para/diretorio</code>: Muda para um diretório específico.</li>
+<li><code>cd ..</code>: Muda para o diretório pai do diretório atual</li>
+</ul>
+<h2 id="criar-um-diretorio">Criar um diretório</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>mkdir nome_do_diretorio
+</code></pre></div></td></tr></table></div>
+<h2 id="renomear-diretorios-e-arquivos">Renomear diretórios e arquivos</h2>
+<h3 id="renomear-um-diretorio">Renomear um diretório</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>mv diretorio_antigo diretorio_novo
+</code></pre></div></td></tr></table></div>
+<h3 id="renomear-um-arquivo">Renomear um arquivo</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>mv arquivo_antigo.txt arquivo_novo.txt
+</code></pre></div></td></tr></table></div>
+<h2 id="mover-diretorios-e-arquivos">Mover diretórios e arquivos</h2>
+<h3 id="mover-diretorio">Mover diretório</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>mv meu_diretorio novo_local/
+</code></pre></div></td></tr></table></div>
+<h3 id="mover-um-arquivo-para-um-diretorio-especifico">Mover um arquivo para um diretório específico</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>mv arquivo.txt /caminho/do/destino/
+</code></pre></div></td></tr></table></div>
+<h3 id="mover-varios-arquivos-para-um-diretorio">Mover vários arquivos para um diretório</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>mv arquivo1.txt arquivo2.txt /caminho/do/destino/
+</code></pre></div></td></tr></table></div>
+<h3 id="usar-curingas-para-mover-arquivos-com-padroes-especificos">Usar curingas para mover arquivos com padrões específicos</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>mv<span class="w"> </span>*.txt<span class="w"> </span>/caminho/do/destino/
+</code></pre></div></td></tr></table></div>
+<h2 id="excluir-diretorios">Excluir diretórios</h2>
+<h3 id="diretorios-vazios">Diretórios vazios</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>rmdir nome_do_diretorio
+</code></pre></div></td></tr></table></div>
+<h3 id="diretorios-nao-vazios">Diretórios não vazios</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>rm -R nome_do_diretorio
+</code></pre></div></td></tr></table></div>
+<h2 id="criar-um-arquivo">Criar um arquivo</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>echo &quot;hello world&quot; &gt; hello.txt
+</code></pre></div></td></tr></table></div>
+<ul>
+<li><code>echo "hello world"</code>: Este comando imprime a frase “hello world” no terminal</li>
+<li><code>&gt;</code>: Este operador redireciona a saída do comando echo para um arquivo.</li>
+<li><code>hello.txt</code>: Este é o nome do arquivo onde a frase será escrita. Se o arquivo não existir, ele será criado; se já existir, seu conteúdo será substituído pela nova frase.</li>
+</ul>
+<h2 id="criar-varios-arquivos-de-uma-unica-vez">Criar vários arquivos de uma única vez</h2>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>touch<span class="w"> </span>arquivo<span class="o">{</span><span class="m">1</span>..5<span class="o">}</span>.txt
+</code></pre></div></td></tr></table></div>
+Você também pode adicionar um conteúdo ao arquivo usando o <code>for</code>. No comando <code>echo</code>, a opção <code>-e</code> habilita a interpretação de caracteres de escape. Isso permite que você use sequências como <code>\n</code> para nova linha, <code>\t</code> para tabulação, entre outras.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>..5<span class="o">}</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;Linha 1 do arquivo </span><span class="nv">$i</span><span class="s2">\nLinha 2 do arquivo </span><span class="nv">$i</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>arquivo<span class="nv">$i</span>.txt
+<span class="k">done</span>
+</code></pre></div></td></tr></table></div></p>
+<h2 id="redirecionar-saida-de-um-comando-para-um-arquivo-com-o-comando-tee">Redirecionar saída de um comando para um arquivo com o comando <code>tee</code></h2>
+<p>O comando <code>tee</code> no Linux é bastante útil para redirecionar a saída de um comando para um arquivo e, ao mesmo tempo, exibir essa saída no terminal. A sintaxe básica do comando é:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>comando | tee [OPÇÕES] [ARQUIVO]
+</code></pre></div></td></tr></table></div>
+Aqui estão alguns exemplos de como usar o <code>tee</code></p>
+<h3 id="salvar-a-saida-de-um-comando-em-um-arquivo-e-exibi-la-no-terminal">Salvar a saída de um comando em um arquivo e exibi-la no terminal</h3>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ls -l | tee lista_de_arquivos.txt
+</code></pre></div></td></tr></table></div>
+Isso listará os arquivos no diretório atual, salvará a lista no arquivo lista_de_arquivos.txt e também exibirá a lista no terminal.</p>
+<h3 id="adicionar-a-saida-de-um-comando-a-um-arquivo-existente">Adicionar a saída de um comando a um arquivo existente</h3>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>echo &quot;Nova linha de texto&quot; | tee -a arquivo_existente.txt
+</code></pre></div></td></tr></table></div>
+Isso adicionará “Nova linha de texto” ao final do arquivo arquivo_existente.txt e também exibirá a linha no terminal.</p>
+<h3 id="usar-tee-com-multiplos-arquivos">Usar tee com múltiplos arquivos</h3>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>df -h | tee arquivo1.txt arquivo2.txt
+</code></pre></div></td></tr></table></div>
+Isso salvará a saída do comando df -h em ambos os arquivos arquivo1.txt e arquivo2.txt, além de exibir a saída no terminal.
+O comando tee é frequentemente usado em scripts e pipelines para monitorar a saída de comandos enquanto a grava em arquivos para referência futura</p>
+<h2 id="abrir-arquivo">Abrir arquivo</h2>
+<p><code>cat</code>: Imprimir o conteúdo de um arquivo</p>
+<p>Exemplo:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>cat /caminho/do/arquivo/hello.txt
+</code></pre></div></td></tr></table></div></p>
+<h2 id="editar-arquivos">Editar arquivos</h2>
+<p><code>nano</code>: Editar um arquivo usando o editor de texto Nano</p>
+<p>Exemplo:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>nano /caminho/do/arquivo/hello.txt
+</code></pre></div></td></tr></table></div></p>
+<h2 id="copiar-arquivos">Copiar arquivos</h2>
+<h3 id="copiar-um-arquivo-de-uma-pasta-par-outra">Copiar um arquivo de uma pasta par outra</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>cp /home/usuario/arquivo.txt /home/usuario/backup/
+</code></pre></div></td></tr></table></div>
+<h3 id="encontrar-e-copiar-varios-arquivos-de-um-diretorio-e-subdiretorios-para-um-diretorio-especifico">Encontrar e copiar vários arquivos de um diretório e subdiretórios para um diretório específico</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>find /home/usuario/imagens -type f -name &quot;*.jpg&quot; -exec cp {} /home/usuario/backup/ \;
+</code></pre></div></td></tr></table></div>
+<h2 id="deletar-arquivos">Deletar arquivos</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>rm c:\simpsons\bart.doc - apaga o arquivo bart.doc presente na pasta simpsons;
+</code></pre></div></td></tr></table></div>
+<h2 id="criar-chave-ssh">Criar chave SSH</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ssh-keygen -t rsa -b 4096 -C &quot;seu_email@example.com&quot;
+</code></pre></div></td></tr></table></div>
+<h2 id="listar-pacotes">Listar pacotes</h2>
+<p>Use o comando apt list  para mostrar todos os pacotes disponíveis do Ubuntu:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo apt list
+</code></pre></div></td></tr></table></div>
+Para listar apenas os pacotes instalados, execute o comando apt list com a opção –installed :
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo apt list –-installed
+</code></pre></div></td></tr></table></div>
+Adicione o argumento less para mostrar uma saída menor. Para fazer isso, adicione um pipe (|) e less no final do seu comando:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo apt list –-installed | less
+</code></pre></div></td></tr></table></div>
+Enquanto less comprime o resultado, o comando ainda listará todos os pacotes instalados. Para verificar se um pacote está instalado, use o comando grep com o nome do software:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo apt list --installed | grep nomedopacote
+</code></pre></div></td></tr></table></div>
+Para visualizar mais informações sobre um pacote específico instalado em seu sistema, use o comando apt show:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo apt show nomedopacote
+</code></pre></div></td></tr></table></div>
+Lembre-se de substituir nomedopacote  pelo nome específico do pacote que você deseja pesquisar. Por exemplo, execute estes comandos para listar pacotes relacionados ao Vim:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo apt list --installed | grep vim
+</code></pre></div></td></tr></table></div>
+Para exibir informações detalhadas sobre um determinado pacote Vim, execute o seguinte:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo apt show vim
+</code></pre></div></td></tr></table></div>
+O comando a seguir é usado para listar todos os pacotes Python instalados no seu ambiente que contêm a palavra “python” no nome.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip3 freeze | grep python
+</code></pre></div></td></tr></table></div></p>
+<ul>
+<li><code>pip3 freeze</code>: Este comando lista todos os pacotes instalados no seu ambiente Python, juntamente com suas versões.</li>
+<li><code>|</code>: Este é o operador pipe, que redireciona a saída do comando anterior (pip3 freeze) como entrada para o próximo comando (grep).</li>
+<li><code>grep python</code>: Este comando filtra a lista de pacotes para mostrar apenas aqueles que contêm a palavra “python” no nome.</li>
+</ul>
+<h2 id="desinstalar-pacotes">Desinstalar pacotes</h2>
+<p>Para desinstalar pacotes no Linux, você pode usar o comando apt com a opção remove. Por exemplo, para desinstalar o pacote python3, você pode usar o seguinte comando:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo apt remove nome_do_pacote
+</code></pre></div></td></tr></table></div>
+Se você deseja remover também as dependências do pacote, você pode usar a opção purge em vez de remove:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo apt purge nome_do_pacote
+</code></pre></div></td></tr></table></div>
+Se você deseja remover todos os pacotes que foram instalados automaticamente como dependências, você pode usar a opção autoremove:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo apt autoremove
+</code></pre></div></td></tr></table></div></p>
+<h2 id="ambiente-virtual-do-python">Ambiente virtual do Python</h2>
+<h3 id="criar-um-ambiente-virtual">Criar um ambiente virtual</h3>
+<p>Criar um ambiente virtual do python
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>python3 -m venv nome_do_ambiente
+</code></pre></div></td></tr></table></div></p>
+<p>Criar um ambiente virtual do python a partir do diretório altual
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>python3 -m venv ./nome_do_amabiente
+</code></pre></div></td></tr></table></div></p>
+<h3 id="ativar-o-ambiente-virtual">Ativar o ambiente virtual</h3>
+<h4 id="linuxmacos">Linux/MacOS</h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">source</span><span class="w"> </span>nome_do_ambiente/bin/activate
+</code></pre></div></td></tr></table></div>
+<h4 id="windows">Windows</h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">nome_do_ambiente</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">activate</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="verificar-hash">Verificar HASH</h2>
+<h3 id="linux_1">Linux</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sha256sum &quot;caminho/do/arquivo&quot;
+</code></pre></div></td></tr></table></div>
+<h3 id="windows_1">Windows</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>certutil -hashfile &quot;caminho\do\arquivo&quot; SHA256
+</code></pre></div></td></tr></table></div>
+<h2 id="desligar-o-sistema-pelo-terminal">Desligar o sistema pelo terminal</h2>
+<p>O comando para desligar o Linux pelo terminal é:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo shutdown -h now
+</code></pre></div></td></tr></table></div>
+ou
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo poweroff
+</code></pre></div></td></tr></table></div>
+Esses comandos desligam o sistema imediatamente. Se você quiser agendar o desligamento para um horário específico, você pode usar:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo shutdown -h [horário]
+</code></pre></div></td></tr></table></div>
+Por exemplo:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo shutdown -h 14:00
+</code></pre></div></td></tr></table></div>
+Isso desligará o sistema às 14:00 horas.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "toc.number"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2862 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../mkdocs/">
+      
+      
+        <link rel="next" href="../javascript/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>GIT - Tutoriais & Ferramentas</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#comandos-git" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Tutoriais &amp; Ferramentas" class="md-header__button md-logo" aria-label="Tutoriais & Ferramentas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tutoriais & Ferramentas
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              GIT
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Tutoriais &amp; Ferramentas" class="md-nav__button md-logo" aria-label="Tutoriais & Ferramentas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Tutoriais & Ferramentas
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Início
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutoriais
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tutoriais
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mysql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MkDocs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    GIT
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    GIT
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#estados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ajuda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ajuda
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ajuda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      Geral
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-especifico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comando específico
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuração
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuração">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geral_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Geral
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Geral">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setar-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setar usuário
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setar-email" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setar email
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setar-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setar editor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setar-ferramenta-de-merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setar ferramenta de merge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setar-arquivos-a-serem-ignorados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setar arquivos a serem ignorados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listar-configuracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listar configurações
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignorar-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ignorar Arquivos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repositorio-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repositório Local
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Repositório Local">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criar-novo-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criar novo repositório
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificar-estado-dos-arquivosdiretorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificar estado dos arquivos/diretórios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adicionar-arquivodiretorio-staged-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adicionar arquivo/diretório (staged area)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adicionar arquivo/diretório (staged area)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adicionar-um-arquivo-em-especifico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adicionar um arquivo em específico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adicionar-um-diretorio-em-especifico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adicionar um diretório em específico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adicionar-todos-os-arquivosdiretorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adicionar todos os arquivos/diretórios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adicionar-um-arquivo-que-esta-listado-no-gitignore-geral-ou-do-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adicionar um arquivo que esta listado no .gitignore (geral ou do repositório)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comitar-arquivodiretorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comitar arquivo/diretório
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comitar arquivo/diretório">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comitar-um-arquivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comitar um arquivo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comitar-varios-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comitar vários arquivos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comitar-informando-mensagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comitar informando mensagem
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remover-arquivodiretorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remover arquivo/diretório
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remover arquivo/diretório">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remover-arquivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remover arquivo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remover-diretorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remover diretório
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizar-historico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualizar histórico
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visualizar histórico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exibir-historico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibir histórico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exibir-historico-com-diff-das-duas-ultimas-alteracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibir histórico com diff das duas últimas alterações
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exibir-resumo-do-historico-hash-completa-autor-data-comentario-e-qtde-de-alteracoes-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibir resumo do histórico (hash completa, autor, data, comentário e qtde de alterações (+/-))
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exibir-informacoes-resumidas-em-uma-linha-hash-completa-e-comentario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibir informações resumidas em uma linha (hash completa e comentário)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exibir-historico-com-formatacao-especifica-hash-abreviada-autor-data-e-comentario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibir histórico com formatação específica (hash abreviada, autor, data e comentário)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exibir-historio-de-um-arquivo-especifico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibir histório de um arquivo específico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exibir-historico-de-um-arquivo-especifico-que-contem-uma-determinada-palavra" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibir histórico de um arquivo específico que contêm uma determinada palavra
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exibir-historico-modificacao-de-um-arquivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibir histórico modificação de um arquivo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exibir-historio-de-um-determinado-autor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibir histório de um determinado autor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exibir-revisao-e-autor-da-ultima-modificacao-de-uma-bloco-de-linhas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibir revisão e autor da última modificação de uma bloco de linhas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desfazendo-operacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desfazendo operações
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Desfazendo operações">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#desfazendo-alteracao-local-working-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desfazendo alteração local (working directory)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desfazendo-alteracao-local-staging-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desfazendo alteração local (staging area)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repositorio-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repositório Remoto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Repositório Remoto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exibir-os-repositorios-remotos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibir os repositórios remotos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vincular-repositorio-local-com-um-repositorio-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vincular repositório local com um repositório remoto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exibir-informacoes-dos-repositorios-remotos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibir informações dos repositórios remotos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renomear-um-repositorio-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renomear um repositório remoto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desvincular-um-repositorio-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desvincular um repositório remoto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enviar-arquivosdiretorios-para-o-repositorio-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enviar arquivos/diretórios para o repositório remoto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atualizar-repositorio-local-de-acordo-com-o-repositorio-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atualizar repositório local de acordo com o repositório remoto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Atualizar repositório local de acordo com o repositório remoto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atualizar-os-arquivos-no-branch-atual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atualizar os arquivos no branch atual
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buscar-as-alteracoes-mas-nao-aplica-las-no-branch-atual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buscar as alterações, mas não aplica-las no branch atual
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clonar-um-repositorio-remoto-ja-existente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clonar um repositório remoto já existente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tags
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criando-uma-tag-leve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando uma tag leve
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criando-uma-tag-anotada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando uma tag anotada
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criando-uma-tag-assinada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando uma tag assinada
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criando-tag-a-partir-de-um-commit-hash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando tag a partir de um commit (hash)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criando-tags-no-repositorio-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando tags no repositório remoto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criando-todas-as-tags-locais-no-repositorio-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando todas as tags locais no repositório remoto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Branches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Branches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criando-um-novo-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando um novo branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trocando-para-um-branch-existente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trocando para um branch existente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criar-um-novo-branch-e-trocar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criar um novo branch e trocar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voltar-para-o-branch-principal-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      Voltar para o branch principal (master)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolver-merge-entre-os-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resolver merge entre os branches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apagando-um-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apagando um branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listar-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listar branches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Listar branches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listar-branches_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listar branches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listar-branches-com-informacoes-dos-ultimos-commits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listar branches com informações dos últimos commits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listar-branches-que-ja-foram-fundidos-merged-com-o-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listar branches que já foram fundidos (merged) com o master
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listar-branches-que-nao-foram-fundidos-merged-com-o-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listar branches que não foram fundidos (merged) com o master
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criando-branches-no-repositorio-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando branches no repositório remoto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Criando branches no repositório remoto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criando-um-branch-remoto-com-o-mesmo-nome" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando um branch remoto com o mesmo nome
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criando-um-branch-remoto-com-nome-diferente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando um branch remoto com nome diferente
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baixar-um-branch-remoto-para-edicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Baixar um branch remoto para edição
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apagar-branch-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apagar branch remoto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rebasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rebasing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stash
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stash">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criar-um-stash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criar um stash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listar-stashes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listar stashes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voltar-para-o-ultimo-stash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Voltar para o último stash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voltar-para-um-stash-especifico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Voltar para um stash específico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criar-um-branch-a-partir-de-um-stash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criar um branch a partir de um stash
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reescrevendo-o-historico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reescrevendo o histórico
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reescrevendo o histórico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alterando-mensagens-de-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alterando mensagens de commit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alterar-ultimos-commits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alterar últimos commits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#juntando-varios-commits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Juntando vários commits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remover-todo-historico-de-um-arquivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remover todo histórico de um arquivo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bisect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bisect
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bisect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iniciar-pequinsa-binaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iniciar pequinsa binária
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marcar-o-commit-atual-como-ruim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marcar o commit atual como ruim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marcar-o-commit-de-uma-tag-que-esta-sem-o-buginconsistencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marcar o commit de uma tag que esta sem o bug/inconsistência
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marcar-o-commit-como-bom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marcar o commit como bom
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marcar-o-commit-como-ruim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marcar o commit como ruim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finalizar-a-pesquisa-binaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finalizar a pesquisa binária
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../javascript/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JavaScript
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ADB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ferramentas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#estados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ajuda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ajuda
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ajuda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      Geral
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-especifico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comando específico
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuração
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuração">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geral_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Geral
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Geral">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setar-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setar usuário
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setar-email" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setar email
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setar-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setar editor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setar-ferramenta-de-merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setar ferramenta de merge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setar-arquivos-a-serem-ignorados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setar arquivos a serem ignorados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listar-configuracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listar configurações
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignorar-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ignorar Arquivos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repositorio-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repositório Local
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Repositório Local">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criar-novo-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criar novo repositório
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificar-estado-dos-arquivosdiretorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificar estado dos arquivos/diretórios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adicionar-arquivodiretorio-staged-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adicionar arquivo/diretório (staged area)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adicionar arquivo/diretório (staged area)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adicionar-um-arquivo-em-especifico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adicionar um arquivo em específico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adicionar-um-diretorio-em-especifico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adicionar um diretório em específico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adicionar-todos-os-arquivosdiretorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adicionar todos os arquivos/diretórios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adicionar-um-arquivo-que-esta-listado-no-gitignore-geral-ou-do-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adicionar um arquivo que esta listado no .gitignore (geral ou do repositório)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comitar-arquivodiretorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comitar arquivo/diretório
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comitar arquivo/diretório">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comitar-um-arquivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comitar um arquivo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comitar-varios-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comitar vários arquivos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comitar-informando-mensagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comitar informando mensagem
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remover-arquivodiretorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remover arquivo/diretório
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remover arquivo/diretório">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remover-arquivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remover arquivo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remover-diretorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remover diretório
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizar-historico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualizar histórico
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visualizar histórico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exibir-historico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibir histórico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exibir-historico-com-diff-das-duas-ultimas-alteracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibir histórico com diff das duas últimas alterações
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exibir-resumo-do-historico-hash-completa-autor-data-comentario-e-qtde-de-alteracoes-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibir resumo do histórico (hash completa, autor, data, comentário e qtde de alterações (+/-))
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exibir-informacoes-resumidas-em-uma-linha-hash-completa-e-comentario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibir informações resumidas em uma linha (hash completa e comentário)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exibir-historico-com-formatacao-especifica-hash-abreviada-autor-data-e-comentario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibir histórico com formatação específica (hash abreviada, autor, data e comentário)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exibir-historio-de-um-arquivo-especifico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibir histório de um arquivo específico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exibir-historico-de-um-arquivo-especifico-que-contem-uma-determinada-palavra" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibir histórico de um arquivo específico que contêm uma determinada palavra
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exibir-historico-modificacao-de-um-arquivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibir histórico modificação de um arquivo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exibir-historio-de-um-determinado-autor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibir histório de um determinado autor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exibir-revisao-e-autor-da-ultima-modificacao-de-uma-bloco-de-linhas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibir revisão e autor da última modificação de uma bloco de linhas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desfazendo-operacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desfazendo operações
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Desfazendo operações">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#desfazendo-alteracao-local-working-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desfazendo alteração local (working directory)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desfazendo-alteracao-local-staging-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desfazendo alteração local (staging area)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repositorio-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repositório Remoto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Repositório Remoto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exibir-os-repositorios-remotos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibir os repositórios remotos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vincular-repositorio-local-com-um-repositorio-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vincular repositório local com um repositório remoto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exibir-informacoes-dos-repositorios-remotos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibir informações dos repositórios remotos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renomear-um-repositorio-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renomear um repositório remoto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desvincular-um-repositorio-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desvincular um repositório remoto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enviar-arquivosdiretorios-para-o-repositorio-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enviar arquivos/diretórios para o repositório remoto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atualizar-repositorio-local-de-acordo-com-o-repositorio-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atualizar repositório local de acordo com o repositório remoto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Atualizar repositório local de acordo com o repositório remoto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atualizar-os-arquivos-no-branch-atual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atualizar os arquivos no branch atual
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buscar-as-alteracoes-mas-nao-aplica-las-no-branch-atual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buscar as alterações, mas não aplica-las no branch atual
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clonar-um-repositorio-remoto-ja-existente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clonar um repositório remoto já existente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tags
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criando-uma-tag-leve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando uma tag leve
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criando-uma-tag-anotada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando uma tag anotada
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criando-uma-tag-assinada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando uma tag assinada
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criando-tag-a-partir-de-um-commit-hash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando tag a partir de um commit (hash)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criando-tags-no-repositorio-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando tags no repositório remoto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criando-todas-as-tags-locais-no-repositorio-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando todas as tags locais no repositório remoto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Branches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Branches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criando-um-novo-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando um novo branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trocando-para-um-branch-existente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trocando para um branch existente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criar-um-novo-branch-e-trocar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criar um novo branch e trocar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voltar-para-o-branch-principal-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      Voltar para o branch principal (master)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolver-merge-entre-os-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resolver merge entre os branches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apagando-um-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apagando um branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listar-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listar branches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Listar branches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listar-branches_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listar branches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listar-branches-com-informacoes-dos-ultimos-commits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listar branches com informações dos últimos commits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listar-branches-que-ja-foram-fundidos-merged-com-o-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listar branches que já foram fundidos (merged) com o master
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listar-branches-que-nao-foram-fundidos-merged-com-o-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listar branches que não foram fundidos (merged) com o master
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criando-branches-no-repositorio-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando branches no repositório remoto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Criando branches no repositório remoto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criando-um-branch-remoto-com-o-mesmo-nome" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando um branch remoto com o mesmo nome
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criando-um-branch-remoto-com-nome-diferente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando um branch remoto com nome diferente
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baixar-um-branch-remoto-para-edicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Baixar um branch remoto para edição
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apagar-branch-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apagar branch remoto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rebasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rebasing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stash
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stash">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criar-um-stash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criar um stash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listar-stashes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listar stashes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voltar-para-o-ultimo-stash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Voltar para o último stash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voltar-para-um-stash-especifico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Voltar para um stash específico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criar-um-branch-a-partir-de-um-stash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criar um branch a partir de um stash
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reescrevendo-o-historico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reescrevendo o histórico
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reescrevendo o histórico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alterando-mensagens-de-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alterando mensagens de commit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alterar-ultimos-commits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alterar últimos commits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#juntando-varios-commits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Juntando vários commits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remover-todo-historico-de-um-arquivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remover todo histórico de um arquivo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bisect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bisect
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bisect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iniciar-pequinsa-binaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iniciar pequinsa binária
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marcar-o-commit-atual-como-ruim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marcar o commit atual como ruim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marcar-o-commit-de-uma-tag-que-esta-sem-o-buginconsistencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marcar o commit de uma tag que esta sem o bug/inconsistência
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marcar-o-commit-como-bom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marcar o commit como bom
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marcar-o-commit-como-ruim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marcar o commit como ruim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finalizar-a-pesquisa-binaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finalizar a pesquisa binária
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="comandos-git">Comandos GIT</h1>
+<h2 id="estados">Estados</h2>
+<ul>
+<li>Modificado (modified);</li>
+<li>Preparado (staged/index)</li>
+<li>Consolidado (comitted);</li>
+</ul>
+<h2 id="ajuda">Ajuda</h2>
+<h5 id="geral">Geral</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git help
+</code></pre></div></td></tr></table></div>
+<h5 id="comando-especifico">Comando específico</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>git help add
+git help commit
+git help &lt;qualquer_comando_git&gt;
+</code></pre></div></td></tr></table></div>
+<h2 id="configuracao">Configuração</h2>
+<h3 id="geral_1">Geral</h3>
+<p>As configurações do GIT são armazenadas no arquivo <strong>.gitconfig</strong> localizado dentro do diretório do usuário do Sistema Operacional (Ex.: Windows: C:\Users\Documents and Settings\Leonardo ou *nix /home/leonardo).</p>
+<p>As configurações realizadas através dos comandos abaixo serão incluídas no arquivo citado acima.</p>
+<h5 id="setar-usuario">Setar usuário</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git config --global user.name &quot;Leonardo Comelli&quot;
+</code></pre></div></td></tr></table></div>
+<h5 id="setar-email">Setar email</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git config --global user.email leonardo@software-ltda.com.br
+</code></pre></div></td></tr></table></div>
+<h5 id="setar-editor">Setar editor</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git config --global core.editor vim
+</code></pre></div></td></tr></table></div>
+<h5 id="setar-ferramenta-de-merge">Setar ferramenta de merge</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git config --global merge.tool vimdiff
+</code></pre></div></td></tr></table></div>
+<h5 id="setar-arquivos-a-serem-ignorados">Setar arquivos a serem ignorados</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git config --global core.excludesfile ~/.gitignore
+</code></pre></div></td></tr></table></div>
+<h5 id="listar-configuracoes">Listar configurações</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git config --list
+</code></pre></div></td></tr></table></div>
+<h3 id="ignorar-arquivos">Ignorar Arquivos</h3>
+<p>Os nomes de arquivos/diretórios ou extensões de arquivos listados no arquivo <strong>.gitignore</strong> não serão adicionados em um repositório. Existem dois arquivos .gitignore, são eles:</p>
+<ul>
+<li>
+<p>Geral: Normalmente armazenado no diretório do usuário do Sistema Operacional. O arquivo que possui a lista dos arquivos/diretórios a serem ignorados por <strong>todos os repositórios</strong> deverá ser declarado conforme citado acima. O arquivo não precisa ter o nome de <strong>.gitignore</strong>.</p>
+</li>
+<li>
+<p>Por repositório: Deve ser armazenado no diretório do repositório e deve conter a lista dos arquivos/diretórios que devem ser ignorados apenas para o repositório específico.</p>
+</li>
+</ul>
+<h2 id="repositorio-local">Repositório Local</h2>
+<h3 id="criar-novo-repositorio">Criar novo repositório</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git init
+</code></pre></div></td></tr></table></div>
+<h3 id="verificar-estado-dos-arquivosdiretorios">Verificar estado dos arquivos/diretórios</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git status
+</code></pre></div></td></tr></table></div>
+<h3 id="adicionar-arquivodiretorio-staged-area">Adicionar arquivo/diretório (staged area)</h3>
+<h5 id="adicionar-um-arquivo-em-especifico">Adicionar um arquivo em específico</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git add meu_arquivo.txt
+</code></pre></div></td></tr></table></div>
+<h5 id="adicionar-um-diretorio-em-especifico">Adicionar um diretório em específico</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git add meu_diretorio
+</code></pre></div></td></tr></table></div>
+<h5 id="adicionar-todos-os-arquivosdiretorios">Adicionar todos os arquivos/diretórios</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git add .
+</code></pre></div></td></tr></table></div>
+<h5 id="adicionar-um-arquivo-que-esta-listado-no-gitignore-geral-ou-do-repositorio">Adicionar um arquivo que esta listado no .gitignore (geral ou do repositório)</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git add -f arquivo_no_gitignore.txt
+</code></pre></div></td></tr></table></div>
+<h3 id="comitar-arquivodiretorio">Comitar arquivo/diretório</h3>
+<h5 id="comitar-um-arquivo">Comitar um arquivo</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git commit meu_arquivo.txt
+</code></pre></div></td></tr></table></div>
+<h5 id="comitar-varios-arquivos">Comitar vários arquivos</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git commit meu_arquivo.txt meu_outro_arquivo.txt
+</code></pre></div></td></tr></table></div>
+<h5 id="comitar-informando-mensagem">Comitar informando mensagem</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git commit meuarquivo.txt -m &quot;minha mensagem de commit&quot;
+</code></pre></div></td></tr></table></div>
+<h3 id="remover-arquivodiretorio">Remover arquivo/diretório</h3>
+<h5 id="remover-arquivo">Remover arquivo</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git rm meu_arquivo.txt
+</code></pre></div></td></tr></table></div>
+<h5 id="remover-diretorio">Remover diretório</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git rm -r diretorio
+</code></pre></div></td></tr></table></div>
+<h3 id="visualizar-historico">Visualizar histórico</h3>
+<h5 id="exibir-historico">Exibir histórico</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git log
+</code></pre></div></td></tr></table></div>
+<h5 id="exibir-historico-com-diff-das-duas-ultimas-alteracoes">Exibir histórico com diff das duas últimas alterações</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git log -p -2
+</code></pre></div></td></tr></table></div>
+<h5 id="exibir-resumo-do-historico-hash-completa-autor-data-comentario-e-qtde-de-alteracoes-">Exibir resumo do histórico (hash completa, autor, data, comentário e qtde de alterações (+/-))</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git log --stat
+</code></pre></div></td></tr></table></div>
+<h5 id="exibir-informacoes-resumidas-em-uma-linha-hash-completa-e-comentario">Exibir informações resumidas em uma linha (hash completa e comentário)</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git log --pretty=oneline
+</code></pre></div></td></tr></table></div>
+<h5 id="exibir-historico-com-formatacao-especifica-hash-abreviada-autor-data-e-comentario">Exibir histórico com formatação específica (hash abreviada, autor, data e comentário)</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git log --pretty=format:&quot;%h - %an, %ar : %s&quot;
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>%h: Abreviação do hash;</li>
+<li>%an: Nome do autor;</li>
+<li>%ar: Data;</li>
+<li>%s: Comentário.</li>
+</ul>
+<p>Verifique as demais opções de formatação no <a href="http://git-scm.com/book/en/Git-Basics-Viewing-the-Commit-History">Git Book</a></p>
+<h5 id="exibir-historio-de-um-arquivo-especifico">Exibir histório de um arquivo específico</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git log -- &lt;caminho_do_arquivo&gt;
+</code></pre></div></td></tr></table></div>
+<h5 id="exibir-historico-de-um-arquivo-especifico-que-contem-uma-determinada-palavra">Exibir histórico de um arquivo específico que contêm uma determinada palavra</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git log --summary -S&lt;palavra&gt; [&lt;caminho_do_arquivo&gt;]
+</code></pre></div></td></tr></table></div>
+<h5 id="exibir-historico-modificacao-de-um-arquivo">Exibir histórico modificação de um arquivo</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git log --diff-filter=M -- &lt;caminho_do_arquivo&gt;
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>O <D> pode ser substituido por: Adicionado (A), Copiado (C), Apagado (D), Modificado (M), Renomeado (R), entre outros.</li>
+</ul>
+<h5 id="exibir-historio-de-um-determinado-autor">Exibir histório de um determinado autor</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git log --author=usuario
+</code></pre></div></td></tr></table></div>
+<h5 id="exibir-revisao-e-autor-da-ultima-modificacao-de-uma-bloco-de-linhas">Exibir revisão e autor da última modificação de uma bloco de linhas</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git blame -L 12,22 meu_arquivo.txt
+</code></pre></div></td></tr></table></div>
+<h3 id="desfazendo-operacoes">Desfazendo operações</h3>
+<h5 id="desfazendo-alteracao-local-working-directory">Desfazendo alteração local (working directory)</h5>
+<p>Este comando deve ser utilizando enquanto o arquivo não foi adicionado na <strong>staged area</strong>. </p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git checkout -- meu_arquivo.txt
+</code></pre></div></td></tr></table></div>
+<h5 id="desfazendo-alteracao-local-staging-area">Desfazendo alteração local (staging area)</h5>
+<p>Este comando deve ser utilizando quando o arquivo já foi adicionado na <strong>staged area</strong>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git reset HEAD meu_arquivo.txt
+</code></pre></div></td></tr></table></div>
+<p>Se o resultado abaixo for exibido, o comando reset <em>não</em> alterou o diretório de trabalho. </p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>Unstaged changes after reset:
+M   meu_arquivo.txt
+</code></pre></div></td></tr></table></div>
+<p>A alteração do diretório pode ser realizada através do comando abaixo:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git checkout meu_arquivo.txt
+</code></pre></div></td></tr></table></div>
+<h2 id="repositorio-remoto">Repositório Remoto</h2>
+<h3 id="exibir-os-repositorios-remotos">Exibir os repositórios remotos</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>git remote
+
+git remote -v
+</code></pre></div></td></tr></table></div>
+<h3 id="vincular-repositorio-local-com-um-repositorio-remoto">Vincular repositório local com um repositório remoto</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git remote add origin git@github.com:leocomelli/curso-git.git
+</code></pre></div></td></tr></table></div>
+<h3 id="exibir-informacoes-dos-repositorios-remotos">Exibir informações dos repositórios remotos</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git remote show origin
+</code></pre></div></td></tr></table></div>
+<h3 id="renomear-um-repositorio-remoto">Renomear um repositório remoto</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git remote rename origin curso-git
+</code></pre></div></td></tr></table></div>
+<h3 id="desvincular-um-repositorio-remoto">Desvincular um repositório remoto</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git remote rm curso-git
+</code></pre></div></td></tr></table></div>
+<h3 id="enviar-arquivosdiretorios-para-o-repositorio-remoto">Enviar arquivos/diretórios para o repositório remoto</h3>
+<p>O primeiro <strong>push</strong> de um repositório deve conter o nome do repositório remoto e o branch.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git push -u origin master
+</code></pre></div></td></tr></table></div>
+<p>Os demais <strong>pushes</strong> não precisam dessa informação</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git push
+</code></pre></div></td></tr></table></div>
+<h3 id="atualizar-repositorio-local-de-acordo-com-o-repositorio-remoto">Atualizar repositório local de acordo com o repositório remoto</h3>
+<h5 id="atualizar-os-arquivos-no-branch-atual">Atualizar os arquivos no branch atual</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git pull
+</code></pre></div></td></tr></table></div>
+<h5 id="buscar-as-alteracoes-mas-nao-aplica-las-no-branch-atual">Buscar as alterações, mas não aplica-las no branch atual</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git fetch
+</code></pre></div></td></tr></table></div>
+<h3 id="clonar-um-repositorio-remoto-ja-existente">Clonar um repositório remoto já existente</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git clone git@github.com:leocomelli/curso-git.git
+</code></pre></div></td></tr></table></div>
+<h3 id="tags">Tags</h3>
+<h5 id="criando-uma-tag-leve">Criando uma tag leve</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git tag vs-1.1
+</code></pre></div></td></tr></table></div>
+<h5 id="criando-uma-tag-anotada">Criando uma tag anotada</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git tag -a vs-1.1 -m &quot;Minha versão 1.1&quot;
+</code></pre></div></td></tr></table></div>
+<h5 id="criando-uma-tag-assinada">Criando uma tag assinada</h5>
+<p>Para criar uma tag assinada é necessário uma chave privada (GNU Privacy Guard - GPG).</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git tag -s vs-1.1 -m &quot;Minha tag assinada 1.1&quot;
+</code></pre></div></td></tr></table></div>
+<h5 id="criando-tag-a-partir-de-um-commit-hash">Criando tag a partir de um commit (hash)</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git tag -a vs-1.2 9fceb02
+</code></pre></div></td></tr></table></div>
+<h5 id="criando-tags-no-repositorio-remoto">Criando tags no repositório remoto</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git push origin vs-1.2
+</code></pre></div></td></tr></table></div>
+<h5 id="criando-todas-as-tags-locais-no-repositorio-remoto">Criando todas as tags locais no repositório remoto</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git push origin --tags
+</code></pre></div></td></tr></table></div>
+<h3 id="branches">Branches</h3>
+<p>O <strong>master</strong> é o branch principal do GIT.</p>
+<p>O <strong>HEAD</strong> é um ponteiro <em>especial</em> que indica qual é o branch atual. Por padrão, o <strong>HEAD</strong> aponta para o branch principal, o <strong>master</strong>.</p>
+<h5 id="criando-um-novo-branch">Criando um novo branch</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git branch bug-123
+</code></pre></div></td></tr></table></div>
+<h5 id="trocando-para-um-branch-existente">Trocando para um branch existente</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git checkout bug-123
+</code></pre></div></td></tr></table></div>
+<p>Neste caso, o ponteiro principal <strong>HEAD</strong> esta apontando para o branch chamado bug-123.</p>
+<h5 id="criar-um-novo-branch-e-trocar">Criar um novo branch e trocar</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git checkout -b bug-456
+</code></pre></div></td></tr></table></div>
+<h5 id="voltar-para-o-branch-principal-master">Voltar para o branch principal (master)</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git checkout master
+</code></pre></div></td></tr></table></div>
+<h5 id="resolver-merge-entre-os-branches">Resolver merge entre os branches</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git merge bug-123
+</code></pre></div></td></tr></table></div>
+<p>Para realizar o <em>merge</em>, é necessário estar no branch que deverá receber as alterações. O <em>merge</em> pode automático ou manual. O merge automático será feito em arquivos textos que não sofreram alterações nas mesmas linhas, já o merge manual será feito em arquivos textos que sofreram alterações nas mesmas linhas.</p>
+<p>A mensagem indicando um <em>merge</em> manual será:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>Automerging meu_arquivo.txt
+CONFLICT (content): Merge conflict in meu_arquivo.txt
+Automatic merge failed; fix conflicts and then commit the result.
+</code></pre></div></td></tr></table></div>
+<h5 id="apagando-um-branch">Apagando um branch</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git branch -d bug-123
+</code></pre></div></td></tr></table></div>
+<h5 id="listar-branches">Listar branches</h5>
+<h6 id="listar-branches_1">Listar branches</h6>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git branch
+</code></pre></div></td></tr></table></div>
+<h6 id="listar-branches-com-informacoes-dos-ultimos-commits">Listar branches com informações dos últimos commits</h6>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git branch -v
+</code></pre></div></td></tr></table></div>
+<h6 id="listar-branches-que-ja-foram-fundidos-merged-com-o-master">Listar branches que já foram fundidos (merged) com o <strong>master</strong></h6>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git branch --merged
+</code></pre></div></td></tr></table></div>
+<h6 id="listar-branches-que-nao-foram-fundidos-merged-com-o-master">Listar branches que não foram fundidos (merged) com o <strong>master</strong></h6>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git branch --no-merged
+</code></pre></div></td></tr></table></div>
+<h5 id="criando-branches-no-repositorio-remoto">Criando branches no repositório remoto</h5>
+<h6 id="criando-um-branch-remoto-com-o-mesmo-nome">Criando um branch remoto com o mesmo nome</h6>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git push origin bug-123
+</code></pre></div></td></tr></table></div>
+<h6 id="criando-um-branch-remoto-com-nome-diferente">Criando um branch remoto com nome diferente</h6>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git push origin bug-123:new-branch
+</code></pre></div></td></tr></table></div>
+<h5 id="baixar-um-branch-remoto-para-edicao">Baixar um branch remoto para edição</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git checkout -b bug-123 origin/bug-123
+</code></pre></div></td></tr></table></div>
+<h5 id="apagar-branch-remoto">Apagar branch remoto</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git push origin:bug-123
+</code></pre></div></td></tr></table></div>
+<h3 id="rebasing">Rebasing</h3>
+<p>Fazendo o <strong>rebase</strong> entre um o branch bug-123 e o master.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>git checkout experiment
+
+git rebase master
+</code></pre></div></td></tr></table></div>
+<p>Mais informações e explicações sobre o <a href="http://git-scm.com/book/en/Git-Branching-Rebasing">Rebasing</a></p>
+<h3 id="stash">Stash</h3>
+<p>Para alternar entre um branch e outro é necessário fazer o commit das alterações atuais para depois trocar para um outro branch. Se existir a necessidade de realizar a troca sem fazer o commit é possível criar um <strong>stash</strong>. O Stash como se fosse um branch temporário que contem apenas as alterações ainda não commitadas.</p>
+<h5 id="criar-um-stash">Criar um stash</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git stash
+</code></pre></div></td></tr></table></div>
+<h5 id="listar-stashes">Listar stashes</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git stash list
+</code></pre></div></td></tr></table></div>
+<h5 id="voltar-para-o-ultimo-stash">Voltar para o último stash</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git stash apply
+</code></pre></div></td></tr></table></div>
+<h5 id="voltar-para-um-stash-especifico">Voltar para um stash específico</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git stash apply stash@{2}
+</code></pre></div></td></tr></table></div>
+<p>Onde <strong>2</strong> é o indíce do stash desejado.</p>
+<h5 id="criar-um-branch-a-partir-de-um-stash">Criar um branch a partir de um stash</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git stash branch meu_branch
+</code></pre></div></td></tr></table></div>
+<h3 id="reescrevendo-o-historico">Reescrevendo o histórico</h3>
+<h5 id="alterando-mensagens-de-commit">Alterando mensagens de commit</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git commit --amend -m &quot;Minha nova mensagem&quot;
+</code></pre></div></td></tr></table></div>
+<h5 id="alterar-ultimos-commits">Alterar últimos commits</h5>
+<p>Alterando os três últimos commits</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git rebase -i HEAD~3
+</code></pre></div></td></tr></table></div>
+<p>O editor de texto será aberto com as linhas representando os três últimos commits.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>pick f7f3f6d changed my name a bit
+pick 310154e updated README formatting and added blame
+pick a5f4a0d added catfile
+</code></pre></div></td></tr></table></div>
+<p>Altere para edit os commits que deseja realizar alterações.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>edit f7f3f6d changed my name a bit
+pick 310154e updated README formatting and added blame
+pick a5f4a0d added catfile
+</code></pre></div></td></tr></table></div>
+<p>Feche o editor de texto.</p>
+<p>Digite o comando para alterar a mensagem do commit que foi marcado como <em>edit</em>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git commit –amend -m “Nova mensagem”
+</code></pre></div></td></tr></table></div>
+<p>Aplique a alteração</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git rebase --continue
+</code></pre></div></td></tr></table></div>
+<p><strong>Atenção:</strong> É possível alterar a ordem dos commits ou remover um commit apenas
+mudando as linhas ou removendo.</p>
+<h5 id="juntando-varios-commits">Juntando vários commits</h5>
+<p>Seguir os mesmos passos acima, porém marcar os commtis que devem ser juntados com *<em>squash</em></p>
+<h5 id="remover-todo-historico-de-um-arquivo">Remover todo histórico de um arquivo</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git filter-branch --tree-filter &#39;rm -f passwords.txt&#39; HEAD
+</code></pre></div></td></tr></table></div>
+<h3 id="bisect">Bisect</h3>
+<p>O bisect (pesquisa binária) é útil para encontrar um commit que esta gerando um bug ou uma inconsistência entre uma sequência de commits.</p>
+<h5 id="iniciar-pequinsa-binaria">Iniciar pequinsa binária</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git bisect start
+</code></pre></div></td></tr></table></div>
+<h5 id="marcar-o-commit-atual-como-ruim">Marcar o commit atual como ruim</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git bisect bad
+</code></pre></div></td></tr></table></div>
+<h5 id="marcar-o-commit-de-uma-tag-que-esta-sem-o-buginconsistencia">Marcar o commit de uma tag que esta sem o bug/inconsistência</h5>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git bisect good vs-1.1
+</code></pre></div></td></tr></table></div>
+<h5 id="marcar-o-commit-como-bom">Marcar o commit como bom</h5>
+<p>O GIT irá navegar entre os commits para ajudar a indentificar o commit que esta com o problema. Se o commit atual não estiver quebrado, então é necessário marca-lo como <strong>bom</strong>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git bisect good
+</code></pre></div></td></tr></table></div>
+<h5 id="marcar-o-commit-como-ruim">Marcar o commit como ruim</h5>
+<p>Se o commit estiver com o problema, então ele deverá ser marcado como <strong>ruim</strong>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git bisect bad
+</code></pre></div></td></tr></table></div>
+<h5 id="finalizar-a-pesquisa-binaria">Finalizar a pesquisa binária</h5>
+<p>Depois de encontrar o commit com problema, para retornar para o <em>HEAD</em> utilize:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git bisect reset
+</code></pre></div></td></tr></table></div>
+<h1 id="contribuicoes">Contribuições</h1>
+<p>Sinta-se a vontade para realizar adicionar mais informações ou realizar correções. Fork me!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "toc.number"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>

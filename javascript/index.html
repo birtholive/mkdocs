@@ -1,0 +1,1263 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../git/">
+      
+      
+        <link rel="next" href="../adb/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>JavaScript - Tutoriais & Ferramentas</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#exemplos-javascript" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Tutoriais &amp; Ferramentas" class="md-header__button md-logo" aria-label="Tutoriais & Ferramentas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tutoriais & Ferramentas
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              JavaScript
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Tutoriais &amp; Ferramentas" class="md-nav__button md-logo" aria-label="Tutoriais & Ferramentas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Tutoriais & Ferramentas
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Início
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutoriais
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tutoriais
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mysql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MkDocs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GIT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    JavaScript
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    JavaScript
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mascara-para-cnpj-e-cpf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Máscara para CNPJ e CPF
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Máscara para CNPJ e CPF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remover-acentos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remover acentos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remover acentos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remover-caracteres-especiais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remover caracteres especiais
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Array
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criando-um-array-de-frutas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando um array de frutas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acessando-elementos-do-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acessando elementos do array
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adicionando-um-novo-elemento-ao-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adicionando um novo elemento ao array
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removendo-o-ultimo-elemento-do-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removendo o último elemento do array
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterando-sobre-os-elementos-do-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterando sobre os elementos do array
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validar-cpf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validar CPF
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encontrando-datas-com-regex" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encontrando datas com RegEx
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Encontrando datas com RegEx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-grupos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por grupos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-data-completa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por data completa
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#corrigir-datas-com-regex" class="md-nav__link">
+    <span class="md-ellipsis">
+      Corrigir datas com RegEx
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ADB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ferramentas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mascara-para-cnpj-e-cpf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Máscara para CNPJ e CPF
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Máscara para CNPJ e CPF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remover-acentos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remover acentos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remover acentos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remover-caracteres-especiais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remover caracteres especiais
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Array
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criando-um-array-de-frutas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando um array de frutas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acessando-elementos-do-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acessando elementos do array
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adicionando-um-novo-elemento-ao-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adicionando um novo elemento ao array
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removendo-o-ultimo-elemento-do-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removendo o último elemento do array
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterando-sobre-os-elementos-do-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterando sobre os elementos do array
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validar-cpf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validar CPF
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encontrando-datas-com-regex" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encontrando datas com RegEx
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Encontrando datas com RegEx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-grupos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por grupos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-data-completa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por data completa
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#corrigir-datas-com-regex" class="md-nav__link">
+    <span class="md-ellipsis">
+      Corrigir datas com RegEx
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="exemplos-javascript">Exemplos JavaScript</h1>
+<h2 id="mascara-para-cnpj-e-cpf">Máscara para CNPJ e CPF</h2>
+<p>Essa função aplica uma máscara de formatação a um valor numérico, transformando-o em um formato de CPF ou CNPJ, dependendo do número de dígitos.
+O método replace com a expressão regular <code>/\D/g</code> remove todos os caracteres que não são dígitos (0-9).</p>
+<h3 id="exemplo-1">Exemplo 1</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">aplicarMascara</span><span class="p">(</span><span class="nx">valor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\D/g</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Remove todos os caracteres não numéricos</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">valor</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">11</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Aplica máscara de CPF</span>
+<span class="w">        </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(\d{3})(\d)/</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;$1.$2&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(\d{3})(\d)/</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;$1.$2&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(\d{3})(\d{1,2})$/</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;$1-$2&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Aplica máscara de CNPJ</span>
+<span class="w">        </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^(\d{2})(\d)/</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;$1.$2&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^(\d{2})\.(\d{3})(\d)/</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;$1.$2.$3&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\.(\d{3})(\d)/</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;.$1/$2&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(\d{4})(\d)/</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;$1-$2&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">valor</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="exemplo-2">Exemplo 2</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">aplicarMascara</span><span class="p">(</span><span class="nx">valor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\D/g</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Remove todos os caracteres não numéricos</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">valor</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">11</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Aplica máscara de CPF</span>
+<span class="w">        </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(.{3})(.{3})(.{3})(.{2})/</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;$1.$2.$3-$4&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Aplica máscara de CNPJ</span>
+<span class="w">        </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(.{2})(.{3})(.{3})(.{4})(.{2})/</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;$1.$2.$3/$4-$5&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">valor</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="remover-acentos">Remover acentos</h2>
+<h3 id="exemplo-1_1">Exemplo 1</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">removerAcentos</span><span class="p">(</span><span class="nx">texto</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">mapearAcentos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s1">&#39;á&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;à&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ã&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;â&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ä&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;a&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="s1">&#39;é&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;è&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ê&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ë&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;e&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="s1">&#39;í&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ì&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;î&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ï&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;i&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="s1">&#39;ó&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ò&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;õ&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ô&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ö&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="s1">&#39;ú&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;u&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ù&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;u&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;û&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;u&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ü&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;u&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="s1">&#39;ç&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ñ&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;n&#39;</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">texto</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/[áàãâäéèêëíìîïóòõôöúùûüçñ]/g</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">match</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">mapearAcentos</span><span class="p">[</span><span class="nx">match</span><span class="p">];</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">}</span>
+
+<span class="c1">// Exemplo de uso</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">texto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Olá, mundo! É um prazer vê-lo.&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">removerAcentos</span><span class="p">(</span><span class="nx">texto</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resultado</span><span class="p">);</span><span class="w">  </span><span class="c1">// Saída: &quot;Ola, mundo! E um prazer ve-lo.&quot;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="exemplo-2_1">Exemplo 2</h3>
+<p>Essa função utiliza o método normalize com a forma “NFD” (Normalization Form Decomposition), que decompõe os caracteres acentuados em caracteres básicos e marcas de acentuação. Em seguida, a expressão regular /[\u0300-\u036f]/g remove essas marcas de acentuação.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">removerAcentos</span><span class="p">(</span><span class="nx">texto</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">texto</span><span class="p">.</span><span class="nx">normalize</span><span class="p">(</span><span class="s2">&quot;NFD&quot;</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/[\u0300-\u036f]/g</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Exemplo de uso</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">textoComAcentos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Olá, como você está?&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">textoSemAcentos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">removerAcentos</span><span class="p">(</span><span class="nx">textoComAcentos</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">textoSemAcentos</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;Ola, como voce esta?&quot;</span>
+</code></pre></div></td></tr></table></div></p>
+<h2 id="remover-caracteres-especiais">Remover caracteres especiais</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">removerCaracteresEspeciais</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Substitui todos os caracteres que não são letras, números ou espaços por uma string vazia</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/[^A-Za-z0-9\s]/g</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Exemplo de uso</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">texto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Olá, mundo! #JavaScript&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">removerCaracteresEspeciais</span><span class="p">(</span><span class="nx">texto</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resultado</span><span class="p">);</span><span class="w">  </span><span class="c1">// Saída: &quot;Olá mundo JavaScript&quot;</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="array">Array</h2>
+<h3 id="criando-um-array-de-frutas">Criando um array de frutas</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">frutas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Maçã&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Banana&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Laranja&quot;</span><span class="p">];</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="acessando-elementos-do-array">Acessando elementos do array</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">frutas</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span><span class="w"> </span><span class="c1">// Exibe &quot;Maçã&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">frutas</span><span class="p">[</span><span class="mf">1</span><span class="p">]);</span><span class="w"> </span><span class="c1">// Exibe &quot;Banana&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">frutas</span><span class="p">[</span><span class="mf">2</span><span class="p">]);</span><span class="w"> </span><span class="c1">// Exibe &quot;Laranja&quot;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="adicionando-um-novo-elemento-ao-array">Adicionando um novo elemento ao array</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">frutas</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">&quot;Manga&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">frutas</span><span class="p">);</span><span class="w"> </span><span class="c1">// Exibe [&quot;Maçã&quot;, &quot;Banana&quot;, &quot;Laranja&quot;, &quot;Manga&quot;]</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="removendo-o-ultimo-elemento-do-array">Removendo o último elemento do array</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">frutas</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">frutas</span><span class="p">);</span><span class="w"> </span><span class="c1">// Exibe [&quot;Maçã&quot;, &quot;Banana&quot;, &quot;Laranja&quot;]</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="iterando-sobre-os-elementos-do-array">Iterando sobre os elementos do array</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">frutas</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">frutas</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="validar-cpf">Validar CPF</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">validarCPF</span><span class="p">(</span><span class="nx">cpf</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">cpf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cpf</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/[^\d]+/g</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Remove caracteres não numéricos</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">cpf</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="mf">11</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="sr">/^(\d)\1+$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">cpf</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"> </span><span class="c1">// Verifica se o CPF tem 11 dígitos ou se todos os dígitos são iguais</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">soma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">resto</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">9</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">soma</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">cpf</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mf">11</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">i</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nx">resto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">soma</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">10</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">11</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">resto</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">resto</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">11</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">resto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">resto</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">cpf</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mf">9</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">)))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nx">soma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">soma</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">cpf</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mf">12</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">i</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nx">resto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">soma</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">10</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">11</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">resto</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">resto</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">11</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">resto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">resto</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">cpf</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">11</span><span class="p">)))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Exemplo de uso</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">cpf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;123.456.789-09&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">validarCPF</span><span class="p">(</span><span class="nx">cpf</span><span class="p">));</span><span class="w"> </span><span class="c1">// Retorna true ou false</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="encontrando-datas-com-regex">Encontrando datas com RegEx</h2>
+<h3 id="por-grupos">Por grupos</h3>
+<p>Datas no formato <strong>dd/MM/yyyy</strong> e <strong>d/M/yy</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>/(\d{1,2})\/(\d{1,2})\/(\d{2,4})/gm
+</code></pre></div></td></tr></table></div></p>
+<h3 id="por-data-completa">Por data completa</h3>
+<p>Datas no formato <strong>dd/MM/yyyy</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>/\d{1,2}\/\d{2}\/\d{4}/gm
+</code></pre></div></td></tr></table></div>
+Datas no formato <strong>dd/MM/yyyy</strong> e <strong>d/M/yy</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>/\d{1,2}\/\d{1,2}\/\d{2,4}/gm
+</code></pre></div></td></tr></table></div></p>
+<h2 id="corrigir-datas-com-regex">Corrigir datas com RegEx</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1/02/80&#39;</span><span class="c1">// Try edit me</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/(\d{1,2})\/(\d{1,2})\/(\d{2,4})/gm</span><span class="w"> </span><span class="c1">//deinição da função regex</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">regex</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span><span class="w"> </span><span class="c1">//execução da função na string</span>
+<span class="c1">// separação do vetor resultado pelo indice</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">dia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">result</span><span class="p">[</span><span class="mf">1</span><span class="p">];</span><span class="w"> </span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">mes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">result</span><span class="p">[</span><span class="mf">2</span><span class="p">];</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">ano</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">result</span><span class="p">[</span><span class="mf">3</span><span class="p">];</span>
+<span class="c1">//verifica se o dia contem menos de 2 caracteres</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">dia</span><span class="p">.</span><span class="nx">length</span><span class="o">&lt;</span><span class="mf">2</span><span class="p">){</span>
+<span class="w">  </span><span class="nx">dia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="o">+</span><span class="w"> </span><span class="nx">dia</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">//verifica se o mes contem menos de 2 caracteres</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">mes</span><span class="p">.</span><span class="nx">length</span><span class="o">&lt;</span><span class="mf">2</span><span class="p">){</span>
+<span class="w">  </span><span class="nx">mes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="o">+</span><span class="w"> </span><span class="nx">mes</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">//define o ano atual com apenas os dois ultimos digitos do ano</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">ano_atual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">()).</span><span class="nx">getFullYear</span><span class="p">().</span><span class="nx">toString</span><span class="p">().</span><span class="nx">substr</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="mf">2</span><span class="p">);</span>
+<span class="c1">//verifica se o ano contem menos de 4 caracteres</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">ano</span><span class="p">.</span><span class="nx">length</span><span class="o">&lt;</span><span class="mf">4</span><span class="p">){</span>
+<span class="w">    </span><span class="nx">ano</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ano</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">ano_atual</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;19&#39;</span><span class="o">+</span><span class="nx">ano</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;20&#39;</span><span class="o">+</span><span class="nx">ano</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">//recria a data com as informações corrigidsa</span>
+<span class="nx">data_corrigida</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dia</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="nx">mes</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="nx">ano</span>
+<span class="c1">// Log to console</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data_corrigida</span><span class="p">)</span><span class="w"> </span><span class="c1">// O resultado esperado é: 01/02/1980  </span>
+</code></pre></div></td></tr></table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "toc.number"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>
