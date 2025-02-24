@@ -182,12 +182,25 @@ Exemplo: Vamos converter o número decimal 3232235776.
 
 Portanto, 3232235776 em formato de IP é 192.168.1.0.
 
+No MySQL, você pode usar as funções INET_ATON e INET_NTOA para converter entre a forma legível e binária de endereços IPv4. Para IPv6, use INET6_ATON e INET6_NTOA.
 
-Para fazer o mesmo no SQL pode-se utilizar a função `inet_ntoa()` como mostrado abaixo:
+IPv4:
+~~~sql
+SET @ip = INET_ATON('127.0.0.1');
+SELECT INET_NTOA(@ip);
+~~~
+
+Exemplo:
 ~~~sql
 SELECT
 	sl.linhas_gsm AS GSM
 	,inet_ntoa(linhas_endereco_ip) AS IP
 FROM
 	sat_linhas sl
+~~~
+
+IPv6 (disponível em MySQL 5.6.3+):
+~~~sql
+SET @ip6 = INET6_ATON('::1');
+SELECT INET6_NTOA(@ip6);
 ~~~
