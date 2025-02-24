@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
     
     
       
@@ -1073,7 +1073,13 @@
 <li>Quarto octeto: (3232235776 \mod 256 = 0)</li>
 </ul>
 <p>Portanto, 3232235776 em formato de IP é 192.168.1.0.</p>
-<p>Para fazer o mesmo no SQL pode-se utilizar a função <code>inet_ntoa()</code> como mostrado abaixo:
+<p>No MySQL, você pode usar as funções INET_ATON e INET_NTOA para converter entre a forma legível e binária de endereços IPv4. Para IPv6, use INET6_ATON e INET6_NTOA.</p>
+<p>IPv4:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">SET</span><span class="w"> </span><span class="o">@</span><span class="n">ip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">INET_ATON</span><span class="p">(</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">);</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">INET_NTOA</span><span class="p">(</span><span class="o">@</span><span class="n">ip</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div></p>
+<p>Exemplo:
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -1083,6 +1089,11 @@
 <span class="w">    </span><span class="p">,</span><span class="n">inet_ntoa</span><span class="p">(</span><span class="n">linhas_endereco_ip</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">IP</span>
 <span class="k">FROM</span>
 <span class="w">    </span><span class="n">sat_linhas</span><span class="w"> </span><span class="n">sl</span>
+</code></pre></div></td></tr></table></div></p>
+<p>IPv6 (disponível em MySQL 5.6.3+):
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">SET</span><span class="w"> </span><span class="o">@</span><span class="n">ip6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">INET6_ATON</span><span class="p">(</span><span class="s1">&#39;::1&#39;</span><span class="p">);</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">INET6_NTOA</span><span class="p">(</span><span class="o">@</span><span class="n">ip6</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div></p>
 
 
