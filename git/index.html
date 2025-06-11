@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -118,11 +118,13 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -154,6 +156,7 @@
     </div>
   </div>
 </div>
+      
     
     
   </nav>
@@ -202,6 +205,7 @@
       <a href=".." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Início
     
@@ -225,6 +229,7 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
@@ -234,6 +239,7 @@
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
+  
   
   <span class="md-ellipsis">
     Tutoriais
@@ -261,6 +267,7 @@
       <a href="../linux/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Linux
     
@@ -282,6 +289,7 @@
     <li class="md-nav__item">
       <a href="../docker/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Docker
@@ -305,6 +313,7 @@
       <a href="../mysql/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     SQL
     
@@ -326,6 +335,7 @@
     <li class="md-nav__item">
       <a href="../mkdocs/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     MkDocs
@@ -358,6 +368,7 @@
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
+  
   <span class="md-ellipsis">
     GIT
     
@@ -369,6 +380,7 @@
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
+  
   
   <span class="md-ellipsis">
     GIT
@@ -1360,6 +1372,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#verificar-o-tamanho-de-um-repositorio-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificar o tamanho de um repositório Git
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1384,6 +1405,7 @@
       <a href="../javascript/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     JavaScript
     
@@ -1405,6 +1427,7 @@
     <li class="md-nav__item">
       <a href="../adb/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     ADB
@@ -1434,6 +1457,7 @@
     <li class="md-nav__item">
       <a href="../tools/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Ferramentas
@@ -2439,6 +2463,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#verificar-o-tamanho-de-um-repositorio-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificar o tamanho de um repositório Git
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2590,21 +2623,20 @@ git help &lt;qualquer_comando_git&gt;
 </code></pre></div></td></tr></table></div>
 <h3 id="desfazendo-operacoes">Desfazendo operações</h3>
 <h5 id="desfazendo-alteracao-local-working-directory">Desfazendo alteração local (working directory)</h5>
-<p>Este comando deve ser utilizando enquanto o arquivo não foi adicionado na <strong>staged area</strong>. </p>
+<p>Este comando deve ser utilizando enquanto o arquivo não foi adicionado na <strong>staged area</strong>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git checkout -- meu_arquivo.txt
 </code></pre></div></td></tr></table></div>
 <h5 id="desfazendo-alteracao-local-staging-area">Desfazendo alteração local (staging area)</h5>
 <p>Este comando deve ser utilizando quando o arquivo já foi adicionado na <strong>staged area</strong>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git reset HEAD meu_arquivo.txt
 </code></pre></div></td></tr></table></div>
-<p>Se o resultado abaixo for exibido, o comando reset <em>não</em> alterou o diretório de trabalho. </p>
+<p>Se o resultado abaixo for exibido, o comando reset <em>não</em> alterou o diretório de trabalho.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>Unstaged changes after reset:
 M   meu_arquivo.txt
 </code></pre></div></td></tr></table></div>
-<p>A alteração do diretório pode ser realizada através do comando abaixo:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git checkout meu_arquivo.txt
-</code></pre></div></td></tr></table></div>
+<p>A alteração do diretório pode ser realizada através do comando abaixo:
+git checkout meu_arquivo.txt</p>
 <h2 id="repositorio-remoto">Repositório Remoto</h2>
 <h3 id="exibir-os-repositorios-remotos">Exibir os repositórios remotos</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -2798,12 +2830,28 @@ mudando as linhas ou removendo.</p>
 </code></pre></div></td></tr></table></div>
 <h5 id="marcar-o-commit-como-ruim">Marcar o commit como ruim</h5>
 <p>Se o commit estiver com o problema, então ele deverá ser marcado como <strong>ruim</strong>.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git bisect bad
-</code></pre></div></td></tr></table></div>
+<p>git bisect bad</p>
 <h5 id="finalizar-a-pesquisa-binaria">Finalizar a pesquisa binária</h5>
-<p>Depois de encontrar o commit com problema, para retornar para o <em>HEAD</em> utilize:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git bisect reset
+<p>Depois de encontrar o commit com problema, para retornar para o <em>HEAD</em> utilize:
+git bisect reset</p>
+<h3 id="verificar-o-tamanho-de-um-repositorio-git">Verificar o tamanho de um repositório Git</h3>
+<p>Para verificar o tamanho de um repositório Git, você pode usar o seguinte comando no terminal.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git count-objects -Vh
 </code></pre></div></td></tr></table></div>
+<p>Esse comando fornece informações sobre o número de objetos no repositório e o tamanho total, incluindo o tamanho em um formato legível (como KB, MB, etc.).</p>
+<p>Quando você executa git count-objects -vH, a saída pode incluir informações como:</p>
+<ul>
+<li><strong>count</strong>: Número total de objetos.</li>
+<li><strong>size</strong>: Tamanho total dos objetos em bytes.</li>
+<li><strong>in-pack</strong>: Número de objetos que estão compactados em pacotes.</li>
+<li><strong>size-pack</strong>: Tamanho total dos pacotes em bytes.</li>
+<li><strong>prune-packable</strong>: Número de objetos que podem ser removidos (pruned).</li>
+<li><strong>garbage</strong>: Número de objetos que são considerados lixo.</li>
+</ul>
+<p>Se você quiser apenas o tamanho do diretório do repositório em disco, pode usar o comando du (disk usage) da seguinte forma:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>du -sh .git
+</code></pre></div></td></tr></table></div>
+<p>Este comando não funciona no PowerShell</p>
 <h1 id="contribuicoes">Contribuições</h1>
 <p>Sinta-se a vontade para realizar adicionar mais informações ou realizar correções. Fork me!</p>
 
@@ -2852,10 +2900,12 @@ mudando as linhas ou removendo.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "toc.number"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "toc.number"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>
