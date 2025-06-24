@@ -205,3 +205,36 @@ data_corrigida = dia+'/'+mes+'/'+ano
 // Log to console
 console.log(data_corrigida) // O resultado esperado é: 01/02/1980  
 ~~~
+
+## Exemplo de função para manipular datas
+!!!tip "Dica"
+      - Utilize datas no formato **YYYY/MM/DD** no input de dados
+    UTILIZE DATA NO FORMATO YYYY/MM/DD NO INPUT DOS DADOS
+~~~js
+function gerarPeriodo(dataFim) {
+    // Converte a data de string para objeto Date
+    var dataPeriodo = new Date(dataFim);
+
+	 // Verifica se a data é válida
+    if (isNaN(dataPeriodo.getTime())) {
+        throw new Error("Data inválida: " + dataFim);
+    }
+    
+    // Adiciona 1 ao mês (mês é zero-indexado)
+    dataPeriodo.setMonth(dataPeriodo.getMonth() + 1);
+    
+    // Obtém o ano da data final
+    var anoCompleto = dataPeriodo.getFullYear(); // Obtém o ano completo
+    var ano = String(anoCompleto).slice(-2); // Converte para string e pega os últimos dois dígitos
+
+    // Obtém o mês seguinte à data final
+    var mes = dataPeriodo.getMonth() + 1; // Adiciona 1 para o próximo mês
+
+    // Formata o mês para ter sempre dois dígitos
+    var mesFormatado = mes < 10 ? '0' + mes : String(mes);
+
+    // Retorna o período no formato desejado
+    var ciclo = String(ano) + mesFormatado;
+    return ciclo;
+}
+~~~
