@@ -614,6 +614,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exemplo-de-funcao-para-manipular-datas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de função para manipular datas
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -882,6 +891,15 @@
   <a href="#corrigir-datas-com-regex" class="md-nav__link">
     <span class="md-ellipsis">
       Corrigir datas com RegEx
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplo-de-funcao-para-manipular-datas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de função para manipular datas
     </span>
   </a>
   
@@ -1221,6 +1239,66 @@ Datas no formato <strong>dd/MM/yyyy</strong> e <strong>d/M/yy</strong>
 <span class="nx">data_corrigida</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dia</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="nx">mes</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="nx">ano</span>
 <span class="c1">// Log to console</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data_corrigida</span><span class="p">)</span><span class="w"> </span><span class="c1">// O resultado esperado é: 01/02/1980  </span>
+</code></pre></div></td></tr></table></div>
+<h2 id="exemplo-de-funcao-para-manipular-datas">Exemplo de função para manipular datas</h2>
+<div class="admonition tip">
+<p class="admonition-title">Dica</p>
+<ul>
+<li>Utilize datas no formato <strong>YYYY/MM/DD</strong> no input de dados
+UTILIZE DATA NO FORMATO YYYY/MM/DD NO INPUT DOS DADOS</li>
+</ul>
+</div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">gerarPeriodo</span><span class="p">(</span><span class="nx">dataFim</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Converte a data de string para objeto Date</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">dataPeriodo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="nx">dataFim</span><span class="p">);</span>
+
+<span class="w">     </span><span class="c1">// Verifica se a data é válida</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="nx">dataPeriodo</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;Data inválida: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">dataFim</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Adiciona 1 ao mês (mês é zero-indexado)</span>
+<span class="w">    </span><span class="nx">dataPeriodo</span><span class="p">.</span><span class="nx">setMonth</span><span class="p">(</span><span class="nx">dataPeriodo</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Obtém o ano da data final</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">anoCompleto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dataPeriodo</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">();</span><span class="w"> </span><span class="c1">// Obtém o ano completo</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">ano</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">(</span><span class="nx">anoCompleto</span><span class="p">).</span><span class="nx">slice</span><span class="p">(</span><span class="o">-</span><span class="mf">2</span><span class="p">);</span><span class="w"> </span><span class="c1">// Converte para string e pega os últimos dois dígitos</span>
+
+<span class="w">    </span><span class="c1">// Obtém o mês seguinte à data final</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">mes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dataPeriodo</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Adiciona 1 para o próximo mês</span>
+
+<span class="w">    </span><span class="c1">// Formata o mês para ter sempre dois dígitos</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">mesFormatado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">mes</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">mes</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">(</span><span class="nx">mes</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Retorna o período no formato desejado</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">ciclo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">(</span><span class="nx">ano</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">mesFormatado</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">ciclo</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 
 
