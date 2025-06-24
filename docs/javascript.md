@@ -209,7 +209,6 @@ console.log(data_corrigida) // O resultado esperado é: 01/02/1980
 ## Exemplo de função para manipular datas
 !!!tip "Dica"
       - Utilize datas no formato **YYYY/MM/DD** no input de dados
-    UTILIZE DATA NO FORMATO YYYY/MM/DD NO INPUT DOS DADOS
 ~~~js
 function gerarPeriodo(dataFim) {
     // Converte a data de string para objeto Date
