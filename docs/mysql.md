@@ -50,10 +50,17 @@ ADD index nome_index (<coluna1>, <coluna2>,...,<coluna_n>)
 ```
 
 ## Alterar o nome de uma coluna
+Para versões anteriores ao MYSQL 8.0
 ```sql
 ALTER TABLE nome_tabela
 CHANGE COLUMN nome_antigo nome_novo int(11) NOT NULL
 ```
+Para versões superiores ao MYSQL 8.0
+```sql
+ALTER TABLE usuarios
+RENAME COLUMN nome_usuario TO nome_completo;
+```
+
 ## Auto Increment
 ```sql
 ALTER TABLE nome_tabela
