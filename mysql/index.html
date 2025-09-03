@@ -432,6 +432,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#alterar-o-nome-de-uma-coluna" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alterar o nome de uma coluna
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#auto-increment" class="md-nav__link">
     <span class="md-ellipsis">
       Auto Increment
@@ -753,6 +762,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#alterar-o-nome-de-uma-coluna" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alterar o nome de uma coluna
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#auto-increment" class="md-nav__link">
     <span class="md-ellipsis">
       Auto Increment
@@ -906,12 +924,17 @@
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="o">&lt;</span><span class="n">tabela</span><span class="o">&gt;</span><span class="w"> </span>
 <span class="k">ADD</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="n">nome_index</span><span class="w"> </span><span class="p">(</span><span class="o">&lt;</span><span class="n">coluna1</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">coluna2</span><span class="o">&gt;</span><span class="p">,...,</span><span class="o">&lt;</span><span class="n">coluna_n</span><span class="o">&gt;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
+<h2 id="alterar-o-nome-de-uma-coluna">Alterar o nome de uma coluna</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">nome_tabela</span>
+<span class="n">CHANGE</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">nome_antigo</span><span class="w"> </span><span class="n">nome_novo</span><span class="w"> </span><span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="auto-increment">Auto Increment</h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="o">&lt;</span><span class="n">tabela</span><span class="o">&gt;</span>
-<span class="n">CHANGE</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="w"> </span><span class="s1">&#39;ID&#39;</span><span class="w"> </span><span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-<span class="k">ADD</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">ID</span><span class="o">`</span><span class="p">);</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">nome_tabela</span>
+<span class="k">MODIFY</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <div class="admonition tip">
 <p class="admonition-title">Dica</p>
@@ -923,7 +946,7 @@
 </div>
 <h2 id="modificar-o-tipo-de-dado-de-uma-colula">Modificar o tipo de dado de uma colula</h2>
 <p>Caso queira modificar o tipo de dado de uma coluna, utilize o código a seguir:
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ALTER TABLE nome_da_tabela MODIFY COLUMN nome_da_coluna VARCHAR(50) NULL;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">nome_da_tabela</span><span class="w"> </span><span class="k">MODIFY</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">nome_da_coluna</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div></p>
 <h2 id="clausula-having">Cláusula HAVING</h2>
 <p>A cláusula HAVING em SQL é usada para filtrar os resultados de uma consulta após a aplicação da cláusula GROUP BY. Ela é especialmente útil quando você precisa aplicar condições em valores agregados, algo que a cláusula WHERE não pode fazer. Aqui está um exemplo:
