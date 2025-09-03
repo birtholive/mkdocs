@@ -49,11 +49,16 @@ ALTER TABLE <tabela>
 ADD index nome_index (<coluna1>, <coluna2>,...,<coluna_n>)
 ```
 
+## Alterar o nome de uma coluna
+```sql
+ALTER TABLE nome_tabela
+CHANGE COLUMN nome_antigo nome_novo int(11) NOT NULL
+```
 ## Auto Increment
 ```sql
-ALTER TABLE <tabela>
-CHANGE COLUMN `id` 'ID' int(11) NOT NULL AUTO_INCREMENT,
-ADD PRIMARY KEY (`ID`);
+ALTER TABLE nome_tabela
+MODIFY COLUMN id INT NOT NULL AUTO_INCREMENT,
+ADD PRIMARY KEY (id);
 ```
 !!! tip "Dica"
     O valor do auto_increment pode ser iniciado a partir de qualquer número. Por ex:
@@ -64,7 +69,7 @@ ADD PRIMARY KEY (`ID`);
 
 ## Modificar o tipo de dado de uma colula
 Caso queira modificar o tipo de dado de uma coluna, utilize o código a seguir:
-```
+```sql
 ALTER TABLE nome_da_tabela MODIFY COLUMN nome_da_coluna VARCHAR(50) NULL;
 ```
 
