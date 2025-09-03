@@ -925,10 +925,16 @@
 <span class="k">ADD</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="n">nome_index</span><span class="w"> </span><span class="p">(</span><span class="o">&lt;</span><span class="n">coluna1</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">coluna2</span><span class="o">&gt;</span><span class="p">,...,</span><span class="o">&lt;</span><span class="n">coluna_n</span><span class="o">&gt;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="alterar-o-nome-de-uma-coluna">Alterar o nome de uma coluna</h2>
+<p>Para versões anteriores ao MYSQL 8.0
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">nome_tabela</span>
 <span class="n">CHANGE</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">nome_antigo</span><span class="w"> </span><span class="n">nome_novo</span><span class="w"> </span><span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
 </code></pre></div></td></tr></table></div>
+Para versões superiores ao MYSQL 8.0
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">usuarios</span>
+<span class="k">RENAME</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">nome_usuario</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">nome_completo</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div></p>
 <h2 id="auto-increment">Auto Increment</h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
