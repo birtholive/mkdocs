@@ -62,6 +62,12 @@ ADD PRIMARY KEY (`ID`);
     AUTO_INCREMENT=777;
     ```
 
+## Modificar o tipo de dado de uma colula
+Caso queira modificar o tipo de dado de uma coluna, utilize o código a seguir:
+```
+ALTER TABLE nome_da_tabela MODIFY COLUMN nome_da_coluna VARCHAR(50) NULL;
+```
+
 ## Cláusula HAVING
 A cláusula HAVING em SQL é usada para filtrar os resultados de uma consulta após a aplicação da cláusula GROUP BY. Ela é especialmente útil quando você precisa aplicar condições em valores agregados, algo que a cláusula WHERE não pode fazer. Aqui está um exemplo:
 ~~~sql
